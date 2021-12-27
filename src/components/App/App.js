@@ -6,8 +6,10 @@ import SearchForm from "../SearchForm/SearchForm";
 function App () {
   return (
     <div className="page">
-      <Header />
-      <SearchForm />
+      <Header/>
+      <main className="main">
+        <SearchForm/>
+      </main>
     </div>
   );
 }
