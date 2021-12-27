@@ -4,7 +4,7 @@ import './SearchForm.css'
 const SearchForm = () => {
   return(
     <section className="search main__search">
-      <form className="search__form">
+      <form className="search__form" name='search'>
         <input type="text" className="search__input" placeholder="Фильм"/>
         <button type="submit" className="search__submit">Найти</button>
       </form>
