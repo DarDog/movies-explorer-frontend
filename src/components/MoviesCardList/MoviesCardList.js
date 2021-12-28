@@ -2,7 +2,7 @@ import React from 'react';
 import './MoviesCardList.css'
 import MoviesCard from "../MoviesCard/MoviesCard";
 
-const MoviesCardList = ({ movies }) => {
+const MoviesCardList = ({ movies = [] }) => {
   return (
     <section className='movies main__movies'>
       <ul className='movies__list'>

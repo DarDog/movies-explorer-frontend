@@ -1,0 +1,486 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Компонент MoviesCardList Соответствует snapshot 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <section
+        class="movies main__movies"
+      >
+        <ul
+          class="movies__list"
+        >
+          <li
+            class="movies__item"
+          >
+            <div
+              class="movies__info"
+            >
+              <h2
+                class="movies__title"
+              >
+                33 слова о дизайне
+              </h2>
+              <p
+                class="movies__duration"
+              >
+                1
+                ч 
+                42
+                м
+              </p>
+              <button
+                class="movies__like movies__like_active"
+              />
+            </div>
+            <img
+              alt="Заглушка"
+              class="movies__poster"
+              src="https://via.placeholder.com/220x122"
+            />
+          </li>
+          <li
+            class="movies__item"
+          >
+            <div
+              class="movies__info"
+            >
+              <h2
+                class="movies__title"
+              >
+                Киноальманах «100 лет дизайна»
+              </h2>
+              <p
+                class="movies__duration"
+              >
+                1
+                ч 
+                42
+                м
+              </p>
+              <button
+                class="movies__like movies__like_active"
+              />
+            </div>
+            <img
+              alt="Заглушка"
+              class="movies__poster"
+              src="https://via.placeholder.com/440x244"
+            />
+          </li>
+          <li
+            class="movies__item"
+          >
+            <div
+              class="movies__info"
+            >
+              <h2
+                class="movies__title"
+              >
+                В погоне за Бенкси
+              </h2>
+              <p
+                class="movies__duration"
+              >
+                1
+                ч 
+                42
+                м
+              </p>
+              <button
+                class="movies__like false"
+              />
+            </div>
+            <img
+              alt="Заглушка"
+              class="movies__poster"
+              src="https://via.placeholder.com/1280x900"
+            />
+          </li>
+          <li
+            class="movies__item"
+          >
+            <div
+              class="movies__info"
+            >
+              <h2
+                class="movies__title"
+              >
+                Баския: Взрыв реальности
+              </h2>
+              <p
+                class="movies__duration"
+              >
+                1
+                ч 
+                42
+                м
+              </p>
+              <button
+                class="movies__like false"
+              />
+            </div>
+            <img
+              alt="Заглушка"
+              class="movies__poster"
+              src="https://via.placeholder.com/600x600"
+            />
+          </li>
+          <li
+            class="movies__item"
+          >
+            <div
+              class="movies__info"
+            >
+              <h2
+                class="movies__title"
+              >
+                Бег это свобода
+              </h2>
+              <p
+                class="movies__duration"
+              >
+                1
+                ч 
+                42
+                м
+              </p>
+              <button
+                class="movies__like movies__like_active"
+              />
+            </div>
+            <img
+              alt="Заглушка"
+              class="movies__poster"
+              src="https://via.placeholder.com/110x61"
+            />
+          </li>
+          <li
+            class="movies__item"
+          >
+            <div
+              class="movies__info"
+            >
+              <h2
+                class="movies__title"
+              >
+                Книготорговцы
+              </h2>
+              <p
+                class="movies__duration"
+              >
+                1
+                ч 
+                42
+                м
+              </p>
+              <button
+                class="movies__like false"
+              />
+            </div>
+            <img
+              alt="Заглушка"
+              class="movies__poster"
+              src="https://via.placeholder.com/122x220"
+            />
+          </li>
+          <li
+            class="movies__item"
+          >
+            <div
+              class="movies__info"
+            >
+              <h2
+                class="movies__title"
+              >
+                Когда я думаю о Германии ночью
+              </h2>
+              <p
+                class="movies__duration"
+              >
+                1
+                ч 
+                42
+                м
+              </p>
+              <button
+                class="movies__like false"
+              />
+            </div>
+            <img
+              alt="Заглушка"
+              class="movies__poster"
+              src="https://via.placeholder.com/244x440"
+            />
+          </li>
+        </ul>
+      </section>
+    </div>
+  </body>,
+  "container": <div>
+    <section
+      class="movies main__movies"
+    >
+      <ul
+        class="movies__list"
+      >
+        <li
+          class="movies__item"
+        >
+          <div
+            class="movies__info"
+          >
+            <h2
+              class="movies__title"
+            >
+              33 слова о дизайне
+            </h2>
+            <p
+              class="movies__duration"
+            >
+              1
+              ч 
+              42
+              м
+            </p>
+            <button
+              class="movies__like movies__like_active"
+            />
+          </div>
+          <img
+            alt="Заглушка"
+            class="movies__poster"
+            src="https://via.placeholder.com/220x122"
+          />
+        </li>
+        <li
+          class="movies__item"
+        >
+          <div
+            class="movies__info"
+          >
+            <h2
+              class="movies__title"
+            >
+              Киноальманах «100 лет дизайна»
+            </h2>
+            <p
+              class="movies__duration"
+            >
+              1
+              ч 
+              42
+              м
+            </p>
+            <button
+              class="movies__like movies__like_active"
+            />
+          </div>
+          <img
+            alt="Заглушка"
+            class="movies__poster"
+            src="https://via.placeholder.com/440x244"
+          />
+        </li>
+        <li
+          class="movies__item"
+        >
+          <div
+            class="movies__info"
+          >
+            <h2
+              class="movies__title"
+            >
+              В погоне за Бенкси
+            </h2>
+            <p
+              class="movies__duration"
+            >
+              1
+              ч 
+              42
+              м
+            </p>
+            <button
+              class="movies__like false"
+            />
+          </div>
+          <img
+            alt="Заглушка"
+            class="movies__poster"
+            src="https://via.placeholder.com/1280x900"
+          />
+        </li>
+        <li
+          class="movies__item"
+        >
+          <div
+            class="movies__info"
+          >
+            <h2
+              class="movies__title"
+            >
+              Баския: Взрыв реальности
+            </h2>
+            <p
+              class="movies__duration"
+            >
+              1
+              ч 
+              42
+              м
+            </p>
+            <button
+              class="movies__like false"
+            />
+          </div>
+          <img
+            alt="Заглушка"
+            class="movies__poster"
+            src="https://via.placeholder.com/600x600"
+          />
+        </li>
+        <li
+          class="movies__item"
+        >
+          <div
+            class="movies__info"
+          >
+            <h2
+              class="movies__title"
+            >
+              Бег это свобода
+            </h2>
+            <p
+              class="movies__duration"
+            >
+              1
+              ч 
+              42
+              м
+            </p>
+            <button
+              class="movies__like movies__like_active"
+            />
+          </div>
+          <img
+            alt="Заглушка"
+            class="movies__poster"
+            src="https://via.placeholder.com/110x61"
+          />
+        </li>
+        <li
+          class="movies__item"
+        >
+          <div
+            class="movies__info"
+          >
+            <h2
+              class="movies__title"
+            >
+              Книготорговцы
+            </h2>
+            <p
+              class="movies__duration"
+            >
+              1
+              ч 
+              42
+              м
+            </p>
+            <button
+              class="movies__like false"
+            />
+          </div>
+          <img
+            alt="Заглушка"
+            class="movies__poster"
+            src="https://via.placeholder.com/122x220"
+          />
+        </li>
+        <li
+          class="movies__item"
+        >
+          <div
+            class="movies__info"
+          >
+            <h2
+              class="movies__title"
+            >
+              Когда я думаю о Германии ночью
+            </h2>
+            <p
+              class="movies__duration"
+            >
+              1
+              ч 
+              42
+              м
+            </p>
+            <button
+              class="movies__like false"
+            />
+          </div>
+          <img
+            alt="Заглушка"
+            class="movies__poster"
+            src="https://via.placeholder.com/244x440"
+          />
+        </li>
+      </ul>
+    </section>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

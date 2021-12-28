@@ -1,7 +1,7 @@
 import React from 'react';
 import SearchForm from "../SearchForm/SearchForm";
 import MoviesCardList from "../MoviesCardList/MoviesCardList";
-import movies from "../MoviesCardList/preparedFilms";
+import movies from "../../utils/preparedFilms";
 
 const Movies = () => {
   return(
