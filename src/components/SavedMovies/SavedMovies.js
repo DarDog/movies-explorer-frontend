@@ -9,7 +9,7 @@ const SavedMovies = ({ movies = [] }) => {
       <SearchForm/>
       {
         movies.length > 0
-          ? <MoviesCardList movies={ movies }/>
+          ? <MoviesCardList movies={ movies } isSaves={ true }/>
           : <Preloader/>
       }
     </>

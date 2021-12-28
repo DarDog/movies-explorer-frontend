@@ -7,7 +7,7 @@ const Header = () => {
   return(
     <header className='header page__header'>
       <Navigation />
-      <NavLink to='/user' className='header__account-link'>Аккаунт</NavLink>
+      <NavLink to='/profile' className='header__account-link'>Аккаунт</NavLink>
     </header>
   );
 }

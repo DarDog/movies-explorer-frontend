@@ -5,7 +5,7 @@ import { NavLink, Link } from "react-router-dom";
 const Navigation = () => {
   return(
     <nav className='navigation'>
-      <Link to="/movies" className="logo" />
+      <Link to="/" className="logo" />
       <NavLink
         to="/movies"
         className={({ isActive }) =>
@@ -13,7 +13,7 @@ const Navigation = () => {
         }
       >Фильмы</NavLink>
       <NavLink
-        to="/save"
+        to="/saved-movies"
         className={({ isActive }) =>
           'navigation__link' + ( isActive ? ' navigation__link_active' : '' )
         }
