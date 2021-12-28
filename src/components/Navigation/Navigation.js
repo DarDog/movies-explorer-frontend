@@ -1,11 +1,11 @@
 import React from 'react';
 import './Navigation.css'
-import { NavLink, Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Navigation = () => {
   return(
     <nav className='navigation'>
-      <Link to="/" className="logo" />
+      <NavLink to="/" className="logo" />
       <NavLink
         to="/movies"
         className={({ isActive }) =>
