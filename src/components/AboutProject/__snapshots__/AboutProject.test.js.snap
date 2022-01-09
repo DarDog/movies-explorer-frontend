@@ -5,16 +5,16 @@ Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <div
+      <section
         class="about"
       >
         <h2
-          class="about__title"
+          class="title"
         >
           О проекте
         </h2>
         <ul
-          class="about__list"
+          class="about__list list"
         >
           <li
             class="list__item"
@@ -77,20 +77,20 @@ Object {
             </p>
           </div>
         </div>
-      </div>
+      </section>
     </div>
   </body>,
   "container": <div>
-    <div
+    <section
       class="about"
     >
       <h2
-        class="about__title"
+        class="title"
       >
         О проекте
       </h2>
       <ul
-        class="about__list"
+        class="about__list list"
       >
         <li
           class="list__item"
@@ -153,7 +153,7 @@ Object {
           </p>
         </div>
       </div>
-    </div>
+    </section>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],

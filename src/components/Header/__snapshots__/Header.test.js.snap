@@ -12,8 +12,9 @@ Object {
           class="navigation"
         >
           <a
-            class="logo"
-            href="/movies"
+            aria-current="page"
+            class="logo active"
+            href="/"
           />
           <a
             class="navigation__link"
@@ -23,14 +24,14 @@ Object {
           </a>
           <a
             class="navigation__link"
-            href="/save"
+            href="/saved-movies"
           >
             Сохранённые фильмы
           </a>
         </nav>
         <a
           class="header__account-link"
-          href="/user"
+          href="/profile"
         >
           Аккаунт
         </a>
@@ -45,8 +46,9 @@ Object {
         class="navigation"
       >
         <a
-          class="logo"
-          href="/movies"
+          aria-current="page"
+          class="logo active"
+          href="/"
         />
         <a
           class="navigation__link"
@@ -56,14 +58,14 @@ Object {
         </a>
         <a
           class="navigation__link"
-          href="/save"
+          href="/saved-movies"
         >
           Сохранённые фильмы
         </a>
       </nav>
       <a
         class="header__account-link"
-        href="/user"
+        href="/profile"
       >
         Аккаунт
       </a>

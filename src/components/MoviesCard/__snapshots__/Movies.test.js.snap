@@ -24,6 +24,7 @@ Object {
           </p>
           <button
             class="movies__like undefined"
+            type="button"
           />
         </div>
         <img
@@ -53,6 +54,7 @@ Object {
         </p>
         <button
           class="movies__like undefined"
+          type="button"
         />
       </div>
       <img

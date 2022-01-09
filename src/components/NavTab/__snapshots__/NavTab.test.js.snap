@@ -6,33 +6,33 @@ Object {
   "baseElement": <body>
     <div>
       <ul
-        class="navbar"
+        class="navtab"
       >
         <li
-          class="navbar__item"
+          class="navtab__item"
         >
           <a
-            class="navbar__link"
+            class="navtab__link"
             href=""
           >
             О проекте
           </a>
         </li>
         <li
-          class="navbar__item"
+          class="navtab__item"
         >
           <a
-            class="navbar__link"
+            class="navtab__link"
             href=""
           >
             Технологии
           </a>
         </li>
         <li
-          class="navbar__item"
+          class="navtab__item"
         >
           <a
-            class="navbar__link"
+            class="navtab__link"
             href=""
           >
             Студент
@@ -43,33 +43,33 @@ Object {
   </body>,
   "container": <div>
     <ul
-      class="navbar"
+      class="navtab"
     >
       <li
-        class="navbar__item"
+        class="navtab__item"
       >
         <a
-          class="navbar__link"
+          class="navtab__link"
           href=""
         >
           О проекте
         </a>
       </li>
       <li
-        class="navbar__item"
+        class="navtab__item"
       >
         <a
-          class="navbar__link"
+          class="navtab__link"
           href=""
         >
           Технологии
         </a>
       </li>
       <li
-        class="navbar__item"
+        class="navtab__item"
       >
         <a
-          class="navbar__link"
+          class="navtab__link"
           href=""
         >
           Студент
