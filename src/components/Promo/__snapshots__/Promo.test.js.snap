@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Компонент NavBar Соответствует своему snapshot 1`] = `
+exports[`Компонент NavTab Соответствует своему snapshot 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>

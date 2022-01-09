@@ -1,14 +1,14 @@
 import React from 'react';
-import NavBar from "./NavBar";
+import NavTab from "./NavTab";
 import { render, screen } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
 import '@testing-library/jest-dom';
 
-describe('Компонент NavBar',() => {
+describe('Компонент NavTab',() => {
   it('Компонент рендерится', () => {
     render(
       <BrowserRouter>
-        <NavBar/>
+        <NavTab/>
       </BrowserRouter>
     );
 
@@ -17,7 +17,7 @@ describe('Компонент NavBar',() => {
   it('Соответствует своему snapshot', () => {
     const component =  render(
       <BrowserRouter>
-        <NavBar/>
+        <NavTab/>
       </BrowserRouter>
     );
 
