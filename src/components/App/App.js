@@ -1,10 +1,11 @@
 import React from 'react';
-import './App.css';
 import Movies from "../Movies/Movies";
-import movies from "../../utils/preparedFilms";
 import SavedMovies from "../SavedMovies/SavedMovies";
 import Main from "../Main/Main";
-import { Route, Routes } from 'react-router-dom'
+import Footer from "../Footer/Footer";
+import { Route, Routes } from 'react-router-dom';
+import movies from "../../utils/preparedFilms";
+import './App.css';
 
 function App () {
   return (
@@ -17,6 +18,7 @@ function App () {
           <Route exact path='/' element={ <Main/> }/>
         </Routes>
       </main>
+      <Footer/>
     </div>
   );
 }
