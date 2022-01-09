@@ -14,10 +14,10 @@ Object {
           О проекте
         </h2>
         <ul
-          class="about__list list"
+          class="list about__list "
         >
           <li
-            class="list__item"
+            class="about__item"
           >
             <h3
               class="list__title"
@@ -31,7 +31,7 @@ Object {
             </p>
           </li>
           <li
-            class="list__item"
+            class="about__item"
           >
             <h3
               class="list__title"
@@ -90,10 +90,10 @@ Object {
         О проекте
       </h2>
       <ul
-        class="about__list list"
+        class="list about__list "
       >
         <li
-          class="list__item"
+          class="about__item"
         >
           <h3
             class="list__title"
@@ -107,7 +107,7 @@ Object {
           </p>
         </li>
         <li
-          class="list__item"
+          class="about__item"
         >
           <h3
             class="list__title"

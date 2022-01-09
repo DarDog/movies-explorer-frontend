@@ -24,7 +24,7 @@ Object {
           На курсе веб-разработки мы освоили технологии, которые применили в дипломном проекте
         </p>
         <ul
-          class="tech__list list"
+          class="list tech__list "
         >
           <li
             class="tech__item"
@@ -85,7 +85,7 @@ Object {
         На курсе веб-разработки мы освоили технологии, которые применили в дипломном проекте
       </p>
       <ul
-        class="tech__list list"
+        class="list tech__list "
       >
         <li
           class="tech__item"

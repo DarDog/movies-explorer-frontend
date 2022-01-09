@@ -1,5 +1,5 @@
 import React from 'react';
-import RowDirectionUl from "./RowDirectionUl";
+import Ul from "./Ul";
 import { render, screen } from "@testing-library/react";
 import '@testing-library/jest-dom';
 
@@ -11,15 +11,15 @@ const children = () => {
   );
 };
 
-describe('Компонент RowDirectionUl', () => {
+describe('Компонент Ul', () => {
   it('Рендерится', () => {
-    render(<RowDirectionUl>{ children() }</RowDirectionUl>);
+    render(<Ul>{ children() }</Ul>);
 
     expect(screen.getByRole('list')).toBeInTheDocument();
     expect(screen.getByText(string)).toBeInTheDocument();
   })
   it('Соответствует своему snapshot', () => {
-    const component = render(<RowDirectionUl>{ children() }</RowDirectionUl>);
+    const component = render(<Ul>{ children() }</Ul>);
 
     expect(component).toMatchSnapshot();
   })

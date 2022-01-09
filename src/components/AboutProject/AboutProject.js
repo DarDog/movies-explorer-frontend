@@ -1,13 +1,13 @@
 import React from 'react';
 import './AboutProject.css'
 import SectionTitle from "../SectionTitle/SectionTitle";
-import RowDirectionUl from "../RowDirectionUl/RowDirectionUl";
+import Ul from "../Ul/Ul";
 
 const AboutProject = () => {
   return(
     <section className='about'>
       <SectionTitle>О проекте</SectionTitle>
-      <RowDirectionUl anotherClass='about__list'>
+      <Ul anotherClass='about__list'>
         <li className='about__item'>
           <h3 className='list__title'>Дипломный проект включает 5 этапов</h3>
           <p className='list__paragraph'>Составление плана, работу над бэкендом, вёрстку, добавление функциональности
@@ -18,7 +18,7 @@ const AboutProject = () => {
           <p className='list__paragraph'>У каждого этапа был мягкий и жёсткий дедлайн, которые нужно было соблюдать,
             чтобы успешно защититься.</p>
         </li>
-      </RowDirectionUl>
+      </Ul>
       <div className='about__track'>
         <div className='track__element track__element_type_back-end'>
           <div className='track__bar track__bar_type_back-end'>1 неделя</div>
