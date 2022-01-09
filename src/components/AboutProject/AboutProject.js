@@ -4,7 +4,7 @@ import SectionTitle from "../SectionTitle/SectionTitle";
 
 const AboutProject = () => {
   return(
-    <div className='about'>
+    <section className='about'>
       <SectionTitle>О проекте</SectionTitle>
       <ul className='about__list'>
         <li className='list__item'>
@@ -28,7 +28,7 @@ const AboutProject = () => {
           <p className='track__bar-name'>Front-end</p>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 
