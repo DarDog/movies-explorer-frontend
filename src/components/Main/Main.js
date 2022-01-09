@@ -4,6 +4,7 @@ import Promo from "../Promo/Promo";
 import NavTab from "../NavTab/NavTab";
 import Header from "../Header/Header";
 import AboutProject from "../AboutProject/AboutProject";
+import Tech from "../Tech/Tech";
 
 const Main = () => {
   return (
@@ -13,6 +14,7 @@ const Main = () => {
         <Promo/>
         <NavTab/>
         <AboutProject/>
+        <Tech/>
       </div>
     </>
   );

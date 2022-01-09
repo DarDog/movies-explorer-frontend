@@ -8,12 +8,12 @@ const AboutProject = () => {
     <section className='about'>
       <SectionTitle>О проекте</SectionTitle>
       <RowDirectionUl anotherClass='about__list'>
-        <li className='list__item'>
+        <li className='about__item'>
           <h3 className='list__title'>Дипломный проект включает 5 этапов</h3>
           <p className='list__paragraph'>Составление плана, работу над бэкендом, вёрстку, добавление функциональности
             и финальные доработки.</p>
         </li>
-        <li className='list__item'>
+        <li className='about__item'>
           <h3 className='list__title'>На выполнение диплома ушло 5 недель</h3>
           <p className='list__paragraph'>У каждого этапа был мягкий и жёсткий дедлайн, которые нужно было соблюдать,
             чтобы успешно защититься.</p>
