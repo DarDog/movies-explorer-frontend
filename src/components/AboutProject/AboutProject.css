@@ -4,11 +4,6 @@
 }
 
 .about__list {
-  list-style: none;
-  margin: 0 0 110px;
-  padding: 0;
-  display: flex;
-  justify-content: space-between;
   gap: 40px;
 }
 
@@ -39,6 +34,7 @@
   width: 100%;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
+  margin-top: 110px;
 }
 
 .track__element {
