@@ -5,7 +5,7 @@ import Ul from "../Ul/Ul";
 
 const AboutProject = () => {
   return(
-    <section className='about'>
+    <section className='about' id='about-project'>
       <SectionTitle>О проекте</SectionTitle>
       <Ul anotherClass='about__list'>
         <li className='about__item'>

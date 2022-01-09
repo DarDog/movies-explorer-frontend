@@ -5,7 +5,7 @@ import './Tech.css'
 
 const Tech = () => {
   return(
-    <section className='tech'>
+    <section className='tech' id='tech'>
       <SectionTitle>Технологии</SectionTitle>
       <h3 className='tech__title'>7 технологий</h3>
       <p className='tech__paragraph'>На курсе веб-разработки мы освоили технологии, которые применили в дипломном проекте</p>

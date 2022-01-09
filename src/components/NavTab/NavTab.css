@@ -10,6 +10,14 @@
   box-sizing: border-box;
 }
 
+.navtab__item {
+  transition: .5s;
+}
+
+.navtab__item:hover {
+  transform: scale(1.5);
+}
+
 .navtab__link {
   text-decoration: underline;
   font-weight: 500;
@@ -17,4 +25,5 @@
   line-height: 16px;
   align-items: center;
   color: #000;
+  cursor: pointer;
 }
