@@ -11,7 +11,7 @@ const children = () => {
   );
 };
 
-describe('Компонент SectionTitle', () => {
+describe('Компонент RowDirectionUl', () => {
   it('Рендерится', () => {
     render(<RowDirectionUl>{ children() }</RowDirectionUl>);
 
