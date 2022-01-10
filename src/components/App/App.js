@@ -2,7 +2,6 @@ import React from 'react';
 import Movies from "../Movies/Movies";
 import SavedMovies from "../SavedMovies/SavedMovies";
 import Main from "../Main/Main";
-import Footer from "../Footer/Footer";
 import { Route, Routes } from 'react-router-dom';
 import movies from "../../utils/preparedFilms";
 import './App.css';
@@ -18,7 +17,6 @@ function App () {
           <Route exact path='/' element={ <Main/> }/>
         </Routes>
       </main>
-      <Footer/>
     </div>
   );
 }

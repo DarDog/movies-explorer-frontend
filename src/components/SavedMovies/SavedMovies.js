@@ -3,6 +3,7 @@ import SearchForm from "../SearchForm/SearchForm";
 import MoviesCardList from "../MoviesCardList/MoviesCardList";
 import Preloader from "../Placeholder/Preloader";
 import Header from "../Header/Header";
+import Footer from "../Footer/Footer";
 
 const SavedMovies = ({ movies = [] }) => {
   return (
@@ -14,6 +15,7 @@ const SavedMovies = ({ movies = [] }) => {
           ? <MoviesCardList movies={ movies } isSaves={ true }/>
           : <Preloader/>
       }
+      <Footer/>
     </>
   );
 }

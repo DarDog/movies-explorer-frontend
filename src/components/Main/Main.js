@@ -6,6 +6,7 @@ import Header from "../Header/Header";
 import AboutProject from "../AboutProject/AboutProject";
 import Tech from "../Tech/Tech";
 import AboutMe from "../AboutMe/AboutMe";
+import Footer from "../Footer/Footer";
 
 const Main = () => {
   return (
@@ -18,6 +19,7 @@ const Main = () => {
         <Tech/>
         <AboutMe/>
       </div>
+      <Footer/>
     </>
   );
 }
