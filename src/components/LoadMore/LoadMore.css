@@ -1,0 +1,23 @@
+.load-more {
+  display: flex;
+  align-items: center;
+  padding: 50px 0 80px;
+}
+
+.load-more__button {
+  padding: 0;
+  margin: 0;
+  min-width: 320px;
+  min-height: 35px;
+  border-radius: 10px;
+  background-color: inherit;
+  border: 1px solid #E8E8E8;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  text-align: center;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
