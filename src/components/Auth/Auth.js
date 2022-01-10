@@ -13,7 +13,7 @@ const Auth = (props) => {
       <div className='auth__footer'>
       <p className='auth__paragraph'>
         { props.isRegister ? 'Уже зарегистрированы? ' : 'Еще не зарегистрированы? ' }
-        { props.isRegister ? <Link to='/sign-up' className='auth__link'>Войти</Link> : <Link to='/sign-in' className='auth__link'>Регистрация</Link> }
+        { props.isRegister ? <Link to='/signin' className='auth__link'>Войти</Link> : <Link to='/signup' className='auth__link'>Регистрация</Link> }
       </p>
       </div>
     </div>

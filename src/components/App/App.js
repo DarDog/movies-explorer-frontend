@@ -7,16 +7,19 @@ import Auth from "../Auth/Auth";
 import { Route, Routes } from 'react-router-dom';
 import movies from "../../utils/preparedFilms";
 import './App.css';
+import Register from "../Register/Register";
 
 function App () {
   return (
     <div className="page">
       <main className="main">
         <Routes>
-          <Route exact path='/sign-in' element={
-            <Auth isRegister={true}/>
+          <Route exact path='/signup' element={
+            <Auth isRegister={true}>
+              <Register/>
+            </Auth>
           }/>
-          <Route exact path='/sign-up' element={
+          <Route exact path='/signin' element={
             <Auth isRegister={false}/>
           }/>
           <Route exact path='/profile' element={ <Profile/> }/>

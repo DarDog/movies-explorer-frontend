@@ -32,6 +32,7 @@
 
 .auth__footer {
   margin-bottom: 70px;
+  align-self: center;
 }
 
 .auth__paragraph {
@@ -41,7 +42,6 @@
   text-align: center;
   color: #A0A0A0;
   margin: 0;
-  align-self: center;
 }
 
 .auth__link {
