@@ -7,6 +7,7 @@ Object {
     <div>
       <section
         class="about"
+        id="about-project"
       >
         <h2
           class="title"
@@ -83,6 +84,7 @@ Object {
   "container": <div>
     <section
       class="about"
+      id="about-project"
     >
       <h2
         class="title"

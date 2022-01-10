@@ -223,6 +223,16 @@ Object {
           </li>
         </ul>
       </section>
+      <section
+        class="load-more"
+      >
+        <button
+          class="load-more__button"
+          type="button"
+        >
+          Ещё
+        </button>
+      </section>
     </div>
   </body>,
   "container": <div>
@@ -443,6 +453,16 @@ Object {
           />
         </li>
       </ul>
+    </section>
+    <section
+      class="load-more"
+    >
+      <button
+        class="load-more__button"
+        type="button"
+      >
+        Ещё
+      </button>
     </section>
   </div>,
   "debug": [Function],

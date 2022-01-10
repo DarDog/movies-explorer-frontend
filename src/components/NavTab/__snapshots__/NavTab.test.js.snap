@@ -13,7 +13,6 @@ Object {
         >
           <a
             class="navtab__link"
-            href=""
           >
             О проекте
           </a>
@@ -23,7 +22,6 @@ Object {
         >
           <a
             class="navtab__link"
-            href=""
           >
             Технологии
           </a>
@@ -33,7 +31,6 @@ Object {
         >
           <a
             class="navtab__link"
-            href=""
           >
             Студент
           </a>
@@ -50,7 +47,6 @@ Object {
       >
         <a
           class="navtab__link"
-          href=""
         >
           О проекте
         </a>
@@ -60,7 +56,6 @@ Object {
       >
         <a
           class="navtab__link"
-          href=""
         >
           Технологии
         </a>
@@ -70,7 +65,6 @@ Object {
       >
         <a
           class="navtab__link"
-          href=""
         >
           Студент
         </a>

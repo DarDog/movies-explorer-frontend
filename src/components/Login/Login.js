@@ -3,7 +3,7 @@ import './Login.css'
 
 const Login = () => {
   return(
-    <form className='login'>
+    <form className='login' name='login'>
       <div className="login__inputs">
         <label className='login__label'>E-mail</label>
         <input className='login__input' type="email"/>
