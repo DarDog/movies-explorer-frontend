@@ -8,6 +8,7 @@ import { Route, Routes } from 'react-router-dom';
 import movies from "../../utils/preparedFilms";
 import './App.css';
 import Register from "../Register/Register";
+import Login from "../Login/Login";
 
 function App () {
   return (
@@ -20,7 +21,9 @@ function App () {
             </Auth>
           }/>
           <Route exact path='/signin' element={
-            <Auth isRegister={false}/>
+            <Auth isRegister={false}>
+              <Login/>
+            </Auth>
           }/>
           <Route exact path='/profile' element={ <Profile/> }/>
           <Route exact path='/movies' element={ <Movies movies={ movies }/> }/>
