@@ -9,6 +9,7 @@ import movies from "../../utils/preparedFilms";
 import './App.css';
 import Register from "../Register/Register";
 import Login from "../Login/Login";
+import NotFoundPage from "../NotFoundPage/NotFoundPage";
 
 function App () {
   return (
@@ -16,12 +17,12 @@ function App () {
       <main className="main">
         <Routes>
           <Route exact path='/signup' element={
-            <Auth isRegister={true}>
+            <Auth isRegister={ true }>
               <Register/>
             </Auth>
           }/>
           <Route exact path='/signin' element={
-            <Auth isRegister={false}>
+            <Auth isRegister={ false }>
               <Login/>
             </Auth>
           }/>
@@ -30,6 +31,7 @@ function App () {
           <Route exact path='/saved-movies'
                  element={ <SavedMovies movies={ movies.filter(movie => movie.isLiked === true) }/> }/>
           <Route exact path='/' element={ <Main/> }/>
+          <Route path='*' element={ <NotFoundPage/> }/>
         </Routes>
       </main>
     </div>
