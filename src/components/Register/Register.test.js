@@ -1,25 +1,25 @@
 import React from 'react';
-import Login from "./Login";
+import Register from "./Register";
 import { render, screen } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
 import '@testing-library/jest-dom';
 
-describe('Компонент Login',() => {
+describe('Компонент Register',() => {
   it('Компонент рендерится', () => {
     render(
       <BrowserRouter>
-        <Login/>
+        <Register/>
       </BrowserRouter>
     );
 
     expect(screen.getByRole('form')).toBeInTheDocument();
-    expect(screen.getByRole('textbox')).toBeInTheDocument();
+    expect(screen.getAllByRole('textbox')).toHaveLength(2);
     expect(screen.getByRole('button')).toBeInTheDocument();
   })
   it('Соответствует своему snapshot', () => {
     const component =  render(
       <BrowserRouter>
-        <Login/>
+        <Register/>
       </BrowserRouter>
     );
 

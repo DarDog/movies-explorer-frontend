@@ -3,7 +3,7 @@ import './Register.css'
 
 const Register = () => {
   return (
-    <form className='register'>
+    <form className='register' name='register'>
       <div className="register__inputs">
         <label className='register__label'>Имя</label>
         <input className='register__input' type="text"/>
