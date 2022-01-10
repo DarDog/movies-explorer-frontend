@@ -1,0 +1,234 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Компонент Profile Соответствует своему snapshot 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <header
+        class="header page__header"
+      >
+        <nav
+          class="navigation"
+        >
+          <a
+            aria-current="page"
+            class="logo active"
+            href="/"
+          />
+          <a
+            class="navigation__link"
+            href="/movies"
+          >
+            Фильмы
+          </a>
+          <a
+            class="navigation__link"
+            href="/saved-movies"
+          >
+            Сохранённые фильмы
+          </a>
+        </nav>
+        <a
+          class="header__account-link"
+          href="/profile"
+        >
+          Аккаунт
+        </a>
+      </header>
+      <section
+        class="profile"
+      >
+        <h1
+          class="profile__title"
+        >
+          Привет, Владислав!
+        </h1>
+        <form
+          class="profile__form"
+          name="edit-profile"
+        >
+          <div
+            class="form__element"
+          >
+            <label
+              class="form__label"
+            >
+              Имя
+            </label>
+            <input
+              class="form__input"
+              placeholder="Владислав"
+              type="text"
+            />
+          </div>
+          <div
+            class="form__element"
+          >
+            <label
+              class="form__label"
+            >
+              E-mail
+            </label>
+            <input
+              class="form__input"
+              placeholder="mail@mail.com"
+              type="email"
+            />
+          </div>
+          <button
+            class="form__button"
+            type="submit"
+          >
+            Редактировать
+          </button>
+        </form>
+        <button
+          class="profile__exit"
+          type="button"
+        >
+          Выйти из аккаунта
+        </button>
+      </section>
+    </div>
+  </body>,
+  "container": <div>
+    <header
+      class="header page__header"
+    >
+      <nav
+        class="navigation"
+      >
+        <a
+          aria-current="page"
+          class="logo active"
+          href="/"
+        />
+        <a
+          class="navigation__link"
+          href="/movies"
+        >
+          Фильмы
+        </a>
+        <a
+          class="navigation__link"
+          href="/saved-movies"
+        >
+          Сохранённые фильмы
+        </a>
+      </nav>
+      <a
+        class="header__account-link"
+        href="/profile"
+      >
+        Аккаунт
+      </a>
+    </header>
+    <section
+      class="profile"
+    >
+      <h1
+        class="profile__title"
+      >
+        Привет, Владислав!
+      </h1>
+      <form
+        class="profile__form"
+        name="edit-profile"
+      >
+        <div
+          class="form__element"
+        >
+          <label
+            class="form__label"
+          >
+            Имя
+          </label>
+          <input
+            class="form__input"
+            placeholder="Владислав"
+            type="text"
+          />
+        </div>
+        <div
+          class="form__element"
+        >
+          <label
+            class="form__label"
+          >
+            E-mail
+          </label>
+          <input
+            class="form__input"
+            placeholder="mail@mail.com"
+            type="email"
+          />
+        </div>
+        <button
+          class="form__button"
+          type="submit"
+        >
+          Редактировать
+        </button>
+      </form>
+      <button
+        class="profile__exit"
+        type="button"
+      >
+        Выйти из аккаунта
+      </button>
+    </section>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
