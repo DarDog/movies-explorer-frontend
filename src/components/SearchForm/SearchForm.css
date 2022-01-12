@@ -105,3 +105,9 @@
   box-sizing: border-box;
   margin-bottom: 10px;
 }
+
+@media screen and (max-width: 768px){
+  .main__search {
+    padding: 80px 30px 10px;
+  }
+}

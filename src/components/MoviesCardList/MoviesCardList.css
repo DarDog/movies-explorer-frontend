@@ -18,3 +18,9 @@
   padding: 70px 70px 10px;
   box-sizing: border-box;
 }
+
+@media screen and (max-width: 768px){
+  .main__movies {
+    padding: 60px 30px 30px;
+  }
+}
