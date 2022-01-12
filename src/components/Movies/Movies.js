@@ -8,7 +8,7 @@ import Footer from "../Footer/Footer";
 const Movies = ({ movies = [] }) => {
   return (
     <>
-      <Header />
+      <Header isLoggedIn={true}/>
       <SearchForm/>
       {
         movies.length > 0

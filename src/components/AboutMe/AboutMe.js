@@ -8,7 +8,7 @@ const AboutMe = () => {
     <section className='about-me' id='about-me'>
       <SectionTitle>Студент</SectionTitle>
       <div className='about-me__info'>
-        <div>
+        <div className='about-me__container'>
           <h3 className='about-me__name'>Владислав</h3>
           <p className='about-me__job'>Фронтенд-разработчик, 24 года</p>
           <p className='about-me__paragraph'>Я родом из города Южно-Сахалинск. Готов как к работе удаленно в любом
@@ -31,21 +31,6 @@ const AboutMe = () => {
           alt="Моя фотография"
         />
       </div>
-      <p className='about-me__portfolio'>Портфолио</p>
-      <Ul isColumn={true} anotherClass='portfolio__list'>
-        <li className='portfolio__item'>
-          <a className='portfolio__link' href="https://dardog.github.io/how-to-learn/">Статичный сайт</a>
-          <div className='link__arrow'/>
-        </li>
-        <li className='portfolio__item'>
-          <a className='portfolio__link' href="https://dardog.github.io/russian-travel/">Адаптивный сайт</a>
-          <div className='link__arrow'/>
-        </li>
-        <li className='portfolio__item'>
-          <a className='portfolio__link' href="http://mesto.subb.nomoredomains.rocks/sign-in">Одностраничное приложение</a>
-          <div className='link__arrow'/>
-        </li>
-      </Ul>
     </section>
   );
 }

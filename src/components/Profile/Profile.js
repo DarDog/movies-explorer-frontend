@@ -5,7 +5,7 @@ import './Profile.css'
 const Profile = () => {
   return (
     <>
-      <Header/>
+      <Header isLoggedIn={true}/>
       <section className='profile'>
         <h1 className='profile__title'>Привет, Владислав!</h1>
         <form name='edit-profile' className='profile__form'>

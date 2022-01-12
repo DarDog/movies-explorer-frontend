@@ -13,9 +13,7 @@ describe('Компонент Tech', () => {
     expect(screen.getByRole('heading', {level: 3})).toBeInTheDocument();
     expect(screen.getByText('Владислав')).toBeInTheDocument();
     expect(screen.getByRole('img')).toBeInTheDocument();
-    expect(screen.getAllByRole('list')).toHaveLength(2);
-    expect(screen.getAllByRole('listitem')).toHaveLength(5);
-    expect(screen.getAllByRole('link')).toHaveLength(5);
+    expect(screen.getByRole('list')).toBeInTheDocument();
   })
   it('Соответствует своему snapshot', () => {
     const component = render(<AboutMe/>);

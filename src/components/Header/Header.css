@@ -30,9 +30,36 @@
   transform: scale(1.1);
 }
 
+.header__link {
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  text-align: right;
+  color: white;
+  margin-right: 30px;
+}
+
+.header__link:last-of-type {
+  margin: 0;
+}
+
+.header__link_type_button {
+  color: black;
+  padding: 8px 20px;
+  background-color: #2BE080;
+  border-radius: 3px;
+}
+
 .page__header {
   width: 100%;
   max-width: 1280px;
   padding: 18px 70px;
   box-sizing: border-box;
+}
+
+@media screen and (max-width: 768px) {
+  .page__header {
+    padding: 18px 30px;
+  }
 }

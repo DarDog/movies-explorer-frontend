@@ -82,3 +82,18 @@
   text-align: center;
   color: #A0A0A0;
 }
+
+@media screen and (max-width: 768px){
+  .about {
+    padding: 90px 50px;
+  }
+
+  .about__list {
+    gap: 30px;
+  }
+
+  .list__paragraph {
+    font-size: 12px;
+    line-height: 18px;
+  }
+}
