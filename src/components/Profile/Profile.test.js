@@ -15,7 +15,7 @@ describe('Компонент Profile', () => {
     expect(screen.getByRole('heading')).toBeInTheDocument();
     expect(screen.getByRole('form')).toBeInTheDocument();
     expect(screen.getAllByRole('textbox')).toHaveLength(2);
-    expect(screen.getAllByRole('button')).toHaveLength(2);
+    expect(screen.getAllByRole('button')).toHaveLength(3);
   })
   it('Соответствует своему snapshot', () => {
     const component = render(

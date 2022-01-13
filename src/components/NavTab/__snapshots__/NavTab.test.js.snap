@@ -5,8 +5,49 @@ Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <ul
+      <section
         class="navtab"
+      >
+        <ul
+          class="list navtab__list "
+        >
+          <li
+            class="navtab__item"
+          >
+            <a
+              class="navtab__link"
+            >
+              О проекте
+            </a>
+          </li>
+          <li
+            class="navtab__item"
+          >
+            <a
+              class="navtab__link"
+            >
+              Технологии
+            </a>
+          </li>
+          <li
+            class="navtab__item"
+          >
+            <a
+              class="navtab__link"
+            >
+              Студент
+            </a>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </body>,
+  "container": <div>
+    <section
+      class="navtab"
+    >
+      <ul
+        class="list navtab__list "
       >
         <li
           class="navtab__item"
@@ -36,40 +77,7 @@ Object {
           </a>
         </li>
       </ul>
-    </div>
-  </body>,
-  "container": <div>
-    <ul
-      class="navtab"
-    >
-      <li
-        class="navtab__item"
-      >
-        <a
-          class="navtab__link"
-        >
-          О проекте
-        </a>
-      </li>
-      <li
-        class="navtab__item"
-      >
-        <a
-          class="navtab__link"
-        >
-          Технологии
-        </a>
-      </li>
-      <li
-        class="navtab__item"
-      >
-        <a
-          class="navtab__link"
-        >
-          Студент
-        </a>
-      </li>
-    </ul>
+    </section>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],

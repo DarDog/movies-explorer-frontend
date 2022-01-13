@@ -36,7 +36,7 @@ Object {
               />
             </div>
             <img
-              alt="Заглушка"
+              alt="33 слова о дизайне"
               class="movies__poster"
               src="https://via.placeholder.com/220x122"
             />
@@ -66,7 +66,7 @@ Object {
               />
             </div>
             <img
-              alt="Заглушка"
+              alt="Киноальманах «100 лет дизайна»"
               class="movies__poster"
               src="https://via.placeholder.com/440x244"
             />
@@ -96,7 +96,7 @@ Object {
               />
             </div>
             <img
-              alt="Заглушка"
+              alt="В погоне за Бенкси"
               class="movies__poster"
               src="https://via.placeholder.com/1280x900"
             />
@@ -126,7 +126,7 @@ Object {
               />
             </div>
             <img
-              alt="Заглушка"
+              alt="Баския: Взрыв реальности"
               class="movies__poster"
               src="https://via.placeholder.com/600x600"
             />
@@ -156,7 +156,7 @@ Object {
               />
             </div>
             <img
-              alt="Заглушка"
+              alt="Бег это свобода"
               class="movies__poster"
               src="https://via.placeholder.com/110x61"
             />
@@ -186,7 +186,7 @@ Object {
               />
             </div>
             <img
-              alt="Заглушка"
+              alt="Книготорговцы"
               class="movies__poster"
               src="https://via.placeholder.com/122x220"
             />
@@ -216,7 +216,7 @@ Object {
               />
             </div>
             <img
-              alt="Заглушка"
+              alt="Когда я думаю о Германии ночью"
               class="movies__poster"
               src="https://via.placeholder.com/244x440"
             />
@@ -267,7 +267,7 @@ Object {
             />
           </div>
           <img
-            alt="Заглушка"
+            alt="33 слова о дизайне"
             class="movies__poster"
             src="https://via.placeholder.com/220x122"
           />
@@ -297,7 +297,7 @@ Object {
             />
           </div>
           <img
-            alt="Заглушка"
+            alt="Киноальманах «100 лет дизайна»"
             class="movies__poster"
             src="https://via.placeholder.com/440x244"
           />
@@ -327,7 +327,7 @@ Object {
             />
           </div>
           <img
-            alt="Заглушка"
+            alt="В погоне за Бенкси"
             class="movies__poster"
             src="https://via.placeholder.com/1280x900"
           />
@@ -357,7 +357,7 @@ Object {
             />
           </div>
           <img
-            alt="Заглушка"
+            alt="Баския: Взрыв реальности"
             class="movies__poster"
             src="https://via.placeholder.com/600x600"
           />
@@ -387,7 +387,7 @@ Object {
             />
           </div>
           <img
-            alt="Заглушка"
+            alt="Бег это свобода"
             class="movies__poster"
             src="https://via.placeholder.com/110x61"
           />
@@ -417,7 +417,7 @@ Object {
             />
           </div>
           <img
-            alt="Заглушка"
+            alt="Книготорговцы"
             class="movies__poster"
             src="https://via.placeholder.com/122x220"
           />
@@ -447,7 +447,7 @@ Object {
             />
           </div>
           <img
-            alt="Заглушка"
+            alt="Когда я думаю о Германии ночью"
             class="movies__poster"
             src="https://via.placeholder.com/244x440"
           />

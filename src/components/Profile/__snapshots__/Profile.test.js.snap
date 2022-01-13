@@ -8,33 +8,53 @@ Object {
       <header
         class="header page__header"
       >
+        <a
+          class="logo"
+          href="/"
+        />
         <nav
-          class="navigation"
+          class="navigation undefined"
         >
-          <a
-            aria-current="page"
-            class="logo active"
-            href="/"
-          />
-          <a
-            class="navigation__link"
-            href="/movies"
+          <ul
+            class="list navigation__list "
           >
-            Фильмы
-          </a>
+            <li>
+              <a
+                aria-current="page"
+                class="navigation__link navigation__link_type_main navigation__link_active"
+                href="/"
+              >
+                Главная
+              </a>
+            </li>
+            <li>
+              <a
+                class="navigation__link"
+                href="/movies"
+              >
+                Фильмы
+              </a>
+            </li>
+            <li>
+              <a
+                class="navigation__link"
+                href="/saved-movies"
+              >
+                Сохранённые фильмы
+              </a>
+            </li>
+          </ul>
           <a
-            class="navigation__link"
-            href="/saved-movies"
+            class="navigation__account-link"
+            href="/profile"
           >
-            Сохранённые фильмы
+            Аккаунт
           </a>
         </nav>
-        <a
-          class="header__account-link"
-          href="/profile"
-        >
-          Аккаунт
-        </a>
+        <button
+          class="header__burger-menu"
+          type="button"
+        />
       </header>
       <section
         class="profile"
@@ -47,6 +67,7 @@ Object {
         <form
           class="profile__form"
           name="edit-profile"
+          novalidate=""
         >
           <div
             class="form__element"
@@ -58,10 +79,16 @@ Object {
             </label>
             <input
               class="form__input"
-              placeholder="Владислав"
+              maxlength="30"
+              minlength="2"
+              required=""
               type="text"
+              value="Владислав"
             />
           </div>
+          <span
+            class="form__error"
+          />
           <div
             class="form__element"
           >
@@ -72,10 +99,14 @@ Object {
             </label>
             <input
               class="form__input"
-              placeholder="mail@mail.com"
+              required=""
               type="email"
+              value="example@example.com"
             />
           </div>
+          <span
+            class="form__error"
+          />
           <button
             class="form__button"
             type="submit"
@@ -96,33 +127,53 @@ Object {
     <header
       class="header page__header"
     >
+      <a
+        class="logo"
+        href="/"
+      />
       <nav
-        class="navigation"
+        class="navigation undefined"
       >
-        <a
-          aria-current="page"
-          class="logo active"
-          href="/"
-        />
-        <a
-          class="navigation__link"
-          href="/movies"
+        <ul
+          class="list navigation__list "
         >
-          Фильмы
-        </a>
+          <li>
+            <a
+              aria-current="page"
+              class="navigation__link navigation__link_type_main navigation__link_active"
+              href="/"
+            >
+              Главная
+            </a>
+          </li>
+          <li>
+            <a
+              class="navigation__link"
+              href="/movies"
+            >
+              Фильмы
+            </a>
+          </li>
+          <li>
+            <a
+              class="navigation__link"
+              href="/saved-movies"
+            >
+              Сохранённые фильмы
+            </a>
+          </li>
+        </ul>
         <a
-          class="navigation__link"
-          href="/saved-movies"
+          class="navigation__account-link"
+          href="/profile"
         >
-          Сохранённые фильмы
+          Аккаунт
         </a>
       </nav>
-      <a
-        class="header__account-link"
-        href="/profile"
-      >
-        Аккаунт
-      </a>
+      <button
+        class="header__burger-menu"
+        type="button"
+      />
     </header>
     <section
       class="profile"
@@ -135,6 +186,7 @@ Object {
       <form
         class="profile__form"
         name="edit-profile"
+        novalidate=""
       >
         <div
           class="form__element"
@@ -146,10 +198,16 @@ Object {
           </label>
           <input
             class="form__input"
-            placeholder="Владислав"
+            maxlength="30"
+            minlength="2"
+            required=""
             type="text"
+            value="Владислав"
           />
         </div>
+        <span
+          class="form__error"
+        />
         <div
           class="form__element"
         >
@@ -160,10 +218,14 @@ Object {
           </label>
           <input
             class="form__input"
-            placeholder="mail@mail.com"
+            required=""
             type="email"
+            value="example@example.com"
           />
         </div>
+        <span
+          class="form__error"
+        />
         <button
           class="form__button"
           type="submit"

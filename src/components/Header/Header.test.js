@@ -11,10 +11,7 @@ describe('Компонент Header', () => {
         <Header/>
       </BrowserRouter>
     );
-
-    expect(screen.getByRole('navigation')).toBeInTheDocument();
-    expect(screen.getByText(/Фильмы/)).toBeInTheDocument();
-    expect(screen.getByText('Аккаунт')).toBeInTheDocument();
+    expect(screen.getByText(/Регистрация/)).toBeInTheDocument();
   })
   it('Соответствует своему snapshot', () => {
     const component = render(

@@ -44,6 +44,9 @@ Object {
             Короткометражки
           </p>
         </div>
+        <div
+          class="search__border"
+        />
       </section>
     </div>
   </body>,
@@ -87,6 +90,9 @@ Object {
           Короткометражки
         </p>
       </div>
+      <div
+        class="search__border"
+      />
     </section>
   </div>,
   "debug": [Function],

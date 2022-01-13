@@ -6,48 +6,84 @@ Object {
   "baseElement": <body>
     <div>
       <nav
-        class="navigation"
+        class="navigation undefined"
       >
-        <a
-          aria-current="page"
-          class="logo active"
-          href="/"
-        />
-        <a
-          class="navigation__link"
-          href="/movies"
+        <ul
+          class="list navigation__list "
         >
-          Фильмы
-        </a>
+          <li>
+            <a
+              aria-current="page"
+              class="navigation__link navigation__link_type_main navigation__link_active"
+              href="/"
+            >
+              Главная
+            </a>
+          </li>
+          <li>
+            <a
+              class="navigation__link"
+              href="/movies"
+            >
+              Фильмы
+            </a>
+          </li>
+          <li>
+            <a
+              class="navigation__link"
+              href="/saved-movies"
+            >
+              Сохранённые фильмы
+            </a>
+          </li>
+        </ul>
         <a
-          class="navigation__link"
-          href="/saved-movies"
+          class="navigation__account-link"
+          href="/profile"
         >
-          Сохранённые фильмы
+          Аккаунт
         </a>
       </nav>
     </div>
   </body>,
   "container": <div>
     <nav
-      class="navigation"
+      class="navigation undefined"
     >
-      <a
-        aria-current="page"
-        class="logo active"
-        href="/"
-      />
-      <a
-        class="navigation__link"
-        href="/movies"
+      <ul
+        class="list navigation__list "
       >
-        Фильмы
-      </a>
+        <li>
+          <a
+            aria-current="page"
+            class="navigation__link navigation__link_type_main navigation__link_active"
+            href="/"
+          >
+            Главная
+          </a>
+        </li>
+        <li>
+          <a
+            class="navigation__link"
+            href="/movies"
+          >
+            Фильмы
+          </a>
+        </li>
+        <li>
+          <a
+            class="navigation__link"
+            href="/saved-movies"
+          >
+            Сохранённые фильмы
+          </a>
+        </li>
+      </ul>
       <a
-        class="navigation__link"
-        href="/saved-movies"
+        class="navigation__account-link"
+        href="/profile"
       >
-        Сохранённые фильмы
+        Аккаунт
       </a>
     </nav>
   </div>,

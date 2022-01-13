@@ -17,7 +17,9 @@ Object {
         <div
           class="about-me__info"
         >
-          <div>
+          <div
+            class="about-me__container"
+          >
             <h3
               class="about-me__name"
             >
@@ -64,54 +66,6 @@ Object {
             src="https://sun9-79.userapi.com/impg/UNNsPwvOp3BZIil4jO23M9rSxpjC5hBjb3DqTw/2RerGfe7TJo.jpg?size=1400x934&quality=96&sign=b4e0c3a162765733fa367a2291d1926d&type=album"
           />
         </div>
-        <p
-          class="about-me__portfolio"
-        >
-          Портфолио
-        </p>
-        <ul
-          class="list portfolio__list list_type_column"
-        >
-          <li
-            class="portfolio__item"
-          >
-            <a
-              class="portfolio__link"
-              href="https://dardog.github.io/how-to-learn/"
-            >
-              Статичный сайт
-            </a>
-            <div
-              class="link__arrow"
-            />
-          </li>
-          <li
-            class="portfolio__item"
-          >
-            <a
-              class="portfolio__link"
-              href="https://dardog.github.io/russian-travel/"
-            >
-              Адаптивный сайт
-            </a>
-            <div
-              class="link__arrow"
-            />
-          </li>
-          <li
-            class="portfolio__item"
-          >
-            <a
-              class="portfolio__link"
-              href="http://mesto.subb.nomoredomains.rocks/sign-in"
-            >
-              Одностраничное приложение
-            </a>
-            <div
-              class="link__arrow"
-            />
-          </li>
-        </ul>
       </section>
     </div>
   </body>,
@@ -128,7 +82,9 @@ Object {
       <div
         class="about-me__info"
       >
-        <div>
+        <div
+          class="about-me__container"
+        >
           <h3
             class="about-me__name"
           >
@@ -175,54 +131,6 @@ Object {
           src="https://sun9-79.userapi.com/impg/UNNsPwvOp3BZIil4jO23M9rSxpjC5hBjb3DqTw/2RerGfe7TJo.jpg?size=1400x934&quality=96&sign=b4e0c3a162765733fa367a2291d1926d&type=album"
         />
       </div>
-      <p
-        class="about-me__portfolio"
-      >
-        Портфолио
-      </p>
-      <ul
-        class="list portfolio__list list_type_column"
-      >
-        <li
-          class="portfolio__item"
-        >
-          <a
-            class="portfolio__link"
-            href="https://dardog.github.io/how-to-learn/"
-          >
-            Статичный сайт
-          </a>
-          <div
-            class="link__arrow"
-          />
-        </li>
-        <li
-          class="portfolio__item"
-        >
-          <a
-            class="portfolio__link"
-            href="https://dardog.github.io/russian-travel/"
-          >
-            Адаптивный сайт
-          </a>
-          <div
-            class="link__arrow"
-          />
-        </li>
-        <li
-          class="portfolio__item"
-        >
-          <a
-            class="portfolio__link"
-            href="http://mesto.subb.nomoredomains.rocks/sign-in"
-          >
-            Одностраничное приложение
-          </a>
-          <div
-            class="link__arrow"
-          />
-        </li>
-      </ul>
     </section>
   </div>,
   "debug": [Function],

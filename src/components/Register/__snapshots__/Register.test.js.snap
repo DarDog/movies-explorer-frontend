@@ -8,6 +8,7 @@ Object {
       <form
         class="register"
         name="register"
+        novalidate=""
       >
         <div
           class="register__inputs"
@@ -18,8 +19,12 @@ Object {
             Имя
           </label>
           <input
-            class="register__input"
+            class="register__input register__input_status_error"
+            maxlength="30"
+            minlength="2"
+            required=""
             type="text"
+            value=""
           />
           <span
             class="register__error"
@@ -30,8 +35,10 @@ Object {
             E-mail
           </label>
           <input
-            class="register__input register__input_status_correct"
+            class="register__input register__input_status_error"
+            required=""
             type="email"
+            value=""
           />
           <span
             class="register__error"
@@ -43,13 +50,15 @@ Object {
           </label>
           <input
             class="register__input register__input_status_error"
+            maxlength="30"
+            minlength="8"
+            required=""
             type="password"
+            value=""
           />
           <span
             class="register__error"
-          >
-            Не пароль
-          </span>
+          />
         </div>
         <button
           class="register__submit"
@@ -63,6 +72,7 @@ Object {
     <form
       class="register"
       name="register"
+      novalidate=""
     >
       <div
         class="register__inputs"
@@ -73,8 +83,12 @@ Object {
           Имя
         </label>
         <input
-          class="register__input"
+          class="register__input register__input_status_error"
+          maxlength="30"
+          minlength="2"
+          required=""
           type="text"
+          value=""
         />
         <span
           class="register__error"
@@ -85,8 +99,10 @@ Object {
           E-mail
         </label>
         <input
-          class="register__input register__input_status_correct"
+          class="register__input register__input_status_error"
+          required=""
           type="email"
+          value=""
         />
         <span
           class="register__error"
@@ -98,13 +114,15 @@ Object {
         </label>
         <input
           class="register__input register__input_status_error"
+          maxlength="30"
+          minlength="8"
+          required=""
           type="password"
+          value=""
         />
         <span
           class="register__error"
-        >
-          Не пароль
-        </span>
+        />
       </div>
       <button
         class="register__submit"

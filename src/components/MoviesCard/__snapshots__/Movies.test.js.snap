@@ -28,7 +28,6 @@ Object {
           />
         </div>
         <img
-          alt="Заглушка"
           class="movies__poster"
         />
       </li>
@@ -58,7 +57,6 @@ Object {
         />
       </div>
       <img
-        alt="Заглушка"
         class="movies__poster"
       />
     </li>
