@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Movies from "../Movies/Movies";
 import SavedMovies from "../SavedMovies/SavedMovies";
 import Main from "../Main/Main";
@@ -10,8 +10,15 @@ import './App.css';
 import Register from "../Register/Register";
 import Login from "../Login/Login";
 import NotFoundPage from "../NotFoundPage/NotFoundPage";
+import Popup from "../Popup/Popup";
 
 function App () {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handlePopupOpen = () => {
+    setIsOpen(!isOpen)
+  }
+
   return (
     <div className="page">
       <main className="main">
@@ -26,13 +33,14 @@ function App () {
               <Login/>
             </Auth>
           }/>
-          <Route exact path='/profile' element={ <Profile/> }/>
-          <Route exact path='/movies' element={ <Movies movies={ movies }/> }/>
+          <Route exact path='/profile' element={ <Profile handlePopupOpen={handlePopupOpen} /> }/>
+          <Route exact path='/movies' element={ <Movies handlePopupOpen={handlePopupOpen} movies={ movies }/> }/>
           <Route exact path='/saved-movies'
-                 element={ <SavedMovies movies={ movies.filter(movie => movie.isLiked === true) }/> }/>
+                 element={ <SavedMovies handlePopupOpen={handlePopupOpen} movies={ movies.filter(movie => movie.isLiked === true) }/> }/>
           <Route exact path='/' element={ <Main/> }/>
           <Route path='*' element={ <NotFoundPage/> }/>
         </Routes>
+        <Popup onClose={handlePopupOpen} isOpen={isOpen}/>
       </main>
     </div>
   );

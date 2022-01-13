@@ -2,10 +2,10 @@ import React from 'react';
 import Header from "../Header/Header";
 import './Profile.css'
 
-const Profile = () => {
+const Profile = (props) => {
   return (
     <>
-      <Header isLoggedIn={true}/>
+      <Header isLoggedIn={true}  handleClick={ props.handlePopupOpen }/>
       <section className='profile'>
         <h1 className='profile__title'>Привет, Владислав!</h1>
         <form name='edit-profile' className='profile__form'>

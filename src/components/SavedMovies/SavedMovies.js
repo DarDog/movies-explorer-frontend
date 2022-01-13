@@ -5,10 +5,10 @@ import Preloader from "../Placeholder/Preloader";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 
-const SavedMovies = ({ movies = [] }) => {
+const SavedMovies = ({ movies = [], ...props }) => {
   return (
     <>
-      <Header isLoggedIn={true}/>
+      <Header handleClick={props.handlePopupOpen} isLoggedIn={true}/>
       <SearchForm/>
       {
         movies.length > 0
