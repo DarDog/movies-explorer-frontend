@@ -15,6 +15,7 @@ const SearchForm = () => {
       </label>
       <p className='search__paragraph'>Короткометражки</p>
       </div>
+      <div className='search__border'/>
     </section>
   );
 }

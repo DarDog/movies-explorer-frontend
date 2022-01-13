@@ -97,17 +97,38 @@
   margin: 0;
 }
 
-.main__search {
-  padding: 80px 0 40px;
-  border-bottom: 1px solid #E8E8E8;
+.search__border {
+  margin-top: 40px;
   width: 100%;
-  max-width: 1140px;
-  box-sizing: border-box;
-  margin-bottom: 10px;
+  border-bottom: 1px solid #E8E8E8;
 }
 
-@media screen and (max-width: 768px){
+.main__search {
+  padding: 80px 70px 0;
+  width: 100%;
+  max-width: 1280px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 800px){
   .main__search {
-    padding: 80px 30px 10px;
+    padding: 80px 30px 0;
+  }
+}
+
+@media screen and (max-width: 500px){
+  .main__search {
+    padding: 80px 14px 0;
+  }
+
+  .search__input {
+    padding: 13px 16px;
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .search__paragraph {
+    font-size: 11px;
   }
 }
