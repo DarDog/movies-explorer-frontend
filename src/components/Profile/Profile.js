@@ -1,22 +1,65 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Header from "../Header/Header";
 import './Profile.css'
 
 const Profile = (props) => {
+  const [email, setEmail] = useState('example@example.com');
+  const [isEmailValid, setIsEmailValid] = useState(false);
+  const [emailErrorMassage, setIsEmailErrorMassage] = useState('');
+  const [isNameValid, setIsNameValid] = useState(false);
+  const [nameErrorMassage, setIsNameErrorMassage] = useState('');
+  const [name, setName] = useState('Владислав');
+
+  const handleEmailChange = (evt) => {
+    setEmail(evt.target.value)
+    validateEmail(evt.target)
+  }
+
+  const handleNameChange = (evt) => {
+    setName(evt.target.value)
+    validateName(evt.target)
+  }
+
+  const validateEmail = (input) => {
+    if (!input.validity.valid) {
+      setIsEmailValid(false);
+      setIsEmailErrorMassage(input.validationMessage);
+    } else {
+      setIsEmailValid(true);
+      setIsEmailErrorMassage(input.validationMessage);
+    }
+  }
+
+  const validateName = (input) => {
+    if (!input.validity.valid) {
+      setIsNameValid(false);
+      setIsNameErrorMassage(input.validationMessage);
+    } else {
+      setIsNameValid(true);
+      setIsNameErrorMassage(input.validationMessage);
+    }
+  }
+
+  const handleSubmit = (evt) => {
+    evt.preventDefault();
+  }
+
   return (
     <>
       <Header isLoggedIn={true}  handleClick={ props.handlePopupOpen }/>
       <section className='profile'>
         <h1 className='profile__title'>Привет, Владислав!</h1>
-        <form name='edit-profile' className='profile__form'>
+        <form onSubmit={handleSubmit} name='edit-profile' className='profile__form' noValidate>
           <div className='form__element'>
             <label className='form__label'>Имя</label>
-            <input className='form__input' type="text" placeholder='Владислав'/>
+            <input className='form__input' type="text" value={name} onChange={handleNameChange} minLength='2' maxLength='30' required/>
           </div>
+          <span className='form__error'>{nameErrorMassage}</span>
           <div className='form__element'>
             <label className='form__label'>E-mail</label>
-            <input className='form__input' type='email' placeholder='mail@mail.com'/>
+            <input className='form__input' type='email' value={email} onChange={handleEmailChange} required/>
           </div>
+          <span className='form__error'>{emailErrorMassage}</span>
           <button type='submit' className='form__button'>Редактировать</button>
         </form>
         <button type='button' className='profile__exit'>Выйти из аккаунта</button>

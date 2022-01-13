@@ -33,7 +33,7 @@
   margin-bottom: 6px;
 }
 
-.register__input_status_correct {
+.register__input:focus {
   border-bottom: 1px solid #2BE080;
 }
 

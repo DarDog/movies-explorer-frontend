@@ -27,6 +27,7 @@
   text-align: center;
   letter-spacing: -0.04em;
   color: black;
+  max-width: 460px;
 }
 
 .tech__list {

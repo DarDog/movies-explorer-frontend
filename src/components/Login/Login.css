@@ -33,7 +33,7 @@
   margin-bottom: 6px;
 }
 
-.login__input_status_correct {
+.login__input:focus {
   border-bottom: 1px solid #2BE080;
 }
 

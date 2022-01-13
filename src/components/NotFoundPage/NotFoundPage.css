@@ -39,3 +39,21 @@
   justify-self: flex-end;
   margin-bottom: 60px;
 }
+
+@media screen and (max-width: 500px){
+  .not-found__title {
+    font-size: 80px;
+    line-height: 97px;
+  }
+
+  .not-found__paragraph {
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  .not-found__link {
+    font-size: 12px;
+    line-height: 15px;
+    margin-bottom: 30px;
+  }
+}
