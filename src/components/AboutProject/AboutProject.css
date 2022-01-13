@@ -81,9 +81,10 @@
   line-height: 17px;
   text-align: center;
   color: #A0A0A0;
+  margin: 0;
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 800px){
   .about {
     padding: 90px 50px;
   }
@@ -95,5 +96,46 @@
   .list__paragraph {
     font-size: 12px;
     line-height: 18px;
+  }
+}
+
+@media screen and (max-width: 550px){
+  .about {
+    padding: 70px 18px;
+  }
+
+  .list__title {
+    font-size: 18px;
+    line-height: 22px;
+    margin-bottom: 16px;
+  }
+
+  .list__paragraph {
+    font-size: 11px;
+    line-height: 16px;
+  }
+
+  .about__list {
+    flex-direction: column;
+    gap: 55px;
+  }
+
+  .about__track {
+    margin-top: 60px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .track__element_type_back-end {
+    grid-column: 1;
+  }
+
+  .track__element_type_front-end {
+    grid-column: 2/4;
+  }
+
+  .track__bar {
+    font-size: 13px;
+    line-height: 13px;
+    margin-bottom: 10px;
   }
 }

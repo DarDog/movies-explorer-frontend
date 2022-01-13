@@ -53,7 +53,7 @@
   color: black;
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 800px){
   .tech {
     padding: 90px 50px;
   }
@@ -68,12 +68,29 @@
     margin-bottom: 80px;
     max-width: 460px;
   }
+}
 
-  .tech__list {
-
+@media screen and (max-width: 550px){
+  .tech {
+    padding: 70px 18px;
   }
 
-  .tech__item {
+  .tech__title {
+    font-size: 30px;
+    line-height: 36px;
+    margin: 0 0 24px;
+  }
 
+  .tech__paragraph {
+    font-size: 11px;
+    line-height: 16px;
+    margin-bottom: 50px;
+  }
+
+  .tech__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    max-width: 200px;
   }
 }

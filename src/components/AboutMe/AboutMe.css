@@ -10,7 +10,6 @@
 
 .about-me__container {
   width: 100%;
-  padding-right: 50px;
 }
 
 .about-me__name {
@@ -63,7 +62,7 @@
   border-radius: 10px;
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 800px){
   .about-me {
     padding: 90px 50px 0;
   }
@@ -89,6 +88,48 @@
 
   .about-me__image {
     max-width: 255px;
-    max-height: 307px;
+    width: 50%;
+    margin-left: 50px;
+  }
+}
+
+@media screen and (max-width: 550px){
+  .about-me {
+    padding: 70px 14px 0;
+  }
+
+  .about-me__info {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  .about-me__container {
+    padding-right: 0;
+  }
+
+  .about-me__image {
+    min-width: 292px;
+    max-width: 100%;
+    width: 100%;
+    /*min-height: 352px;*/
+    margin: 0 0 40px;
+  }
+
+  .about-me__name {
+    margin: 0 0 20px;
+    font-size: 30px;
+    line-height: 36px;
+  }
+
+  .about-me__job {
+    margin: 0 0 20px;
+    font-size: 11px;
+    line-height: 16px;
+  }
+
+  .about-me__paragraph {
+    margin: 0 0 40px;
+    font-size: 11px;
+    line-height: 16px;
   }
 }

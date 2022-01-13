@@ -33,8 +33,24 @@
   position: relative;
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 800px){
   .promo {
     min-height: 784px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .promo {
+    min-height: 570px;
+  }
+
+  .promo__background-logo {
+    padding: 124px;
+    background-size: contain;
+  }
+
+  .promo__title {
+    font-size: 31px;
+    line-height: 39px;
   }
 }

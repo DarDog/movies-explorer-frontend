@@ -57,9 +57,32 @@
 }
 
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 800px){
   .footer {
     padding: 80px 30px 20px;
     background-color: white;
+  }
+}
+
+@media screen and (max-width: 550px){
+  .footer {
+    padding: 80px 10px 10px;
+  }
+
+  .footer__paragraph {
+    margin-bottom: 30px;
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  .footer__info {
+    flex-direction: column-reverse;
+    gap: 30px;
+  }
+
+  .footer__list {
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
   }
 }

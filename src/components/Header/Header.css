@@ -55,12 +55,22 @@
   display: none;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 800px) {
   .page__header {
     padding: 18px 30px;
   }
 
   .header__burger-menu {
     display: block;
+  }
+}
+
+@media screen and (max-width: 550px){
+  .page__header {
+    padding: 18px 14px;
+  }
+
+  .header__link {
+    font-size: 10px;
   }
 }

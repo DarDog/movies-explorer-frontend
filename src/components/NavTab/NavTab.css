@@ -30,3 +30,13 @@
   color: #000;
   cursor: pointer;
 }
+
+@media screen and (max-width: 550px){
+  .navtab__list {
+    gap: 25px;
+  }
+
+  .navtab__link {
+    font-size: 11px;
+  }
+}
