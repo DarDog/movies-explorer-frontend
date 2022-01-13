@@ -75,3 +75,21 @@
   line-height: 16px;
   color: #EE3465;
 }
+
+@media screen and (max-width: 500px){
+  .profile {
+    padding: 70px 30px 40px;
+  }
+
+  .profile__title {
+    margin-bottom: 80px;
+  }
+  .profile__form {
+    min-width: 260px;
+  }
+
+  .form__button {
+    font-size: 12px;
+    line-height: 15px;
+  }
+}

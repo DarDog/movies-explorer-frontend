@@ -48,3 +48,30 @@
   text-decoration: none;
   color: #2BE080;
 }
+
+@media screen and (max-width: 500px){
+  .auth {
+    align-items: center;
+  }
+
+  .auth__greetings {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    margin-bottom: 80px;
+  }
+
+  .auth__logo {
+    margin: 0;
+  }
+
+  .auth__title {
+    margin: 0;
+  }
+
+  .auth__paragraph {
+    font-size: 12px;
+    line-height: 15px;
+  }
+}
