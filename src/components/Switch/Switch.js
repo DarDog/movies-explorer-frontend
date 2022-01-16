@@ -10,12 +10,12 @@ const Switch = () => {
   }
 
   return(
-    <div className='search__switch-container'>
-      <label className="search__switch">
-        <input className="search__checkbox" type="checkbox" onChange={handleSwitchChange} checked={isShorts}/>
-        <span className="search__slider"/>
+    <div className='switch'>
+      <label className="switch__container">
+        <input className="switch__checkbox" type="checkbox" onChange={handleSwitchChange} checked={isShorts}/>
+        <span className="switch__slider"/>
       </label>
-      <p className='search__paragraph'>Короткометражки</p>
+      <p className='switch__paragraph'>Короткометражки</p>
     </div>
   );
 }
