@@ -20,6 +20,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: .3s;
+}
+
+.load-more__button:hover {
+  transform: scale(1.1);
+  opacity: .8;
 }
 
 @media screen and (max-width: 500px){

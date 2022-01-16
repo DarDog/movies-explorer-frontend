@@ -17,7 +17,7 @@ const MoviesCardList = ({ movies = [], ...props }) => {
           }
         </ul>
       </section>
-      <LoadMore/>
+      <LoadMore movies={movies} />
     </>
   );
 }
