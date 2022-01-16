@@ -25,21 +25,21 @@ Object {
           </button>
         </form>
         <div
-          class="search__switch-container"
+          class="switch"
         >
           <label
-            class="search__switch"
+            class="switch__container"
           >
             <input
-              class="search__checkbox"
+              class="switch__checkbox"
               type="checkbox"
             />
             <span
-              class="search__slider"
+              class="switch__slider"
             />
           </label>
           <p
-            class="search__paragraph"
+            class="switch__paragraph"
           >
             Короткометражки
           </p>
@@ -71,21 +71,21 @@ Object {
         </button>
       </form>
       <div
-        class="search__switch-container"
+        class="switch"
       >
         <label
-          class="search__switch"
+          class="switch__container"
         >
           <input
-            class="search__checkbox"
+            class="switch__checkbox"
             type="checkbox"
           />
           <span
-            class="search__slider"
+            class="switch__slider"
           />
         </label>
         <p
-          class="search__paragraph"
+          class="switch__paragraph"
         >
           Короткометражки
         </p>

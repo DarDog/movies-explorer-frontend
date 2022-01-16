@@ -6,7 +6,7 @@ import movies from "../../utils/preparedFilms";
 
 describe('Компонент LoadMore', () => {
   it('Рендерется', () => {
-    render(<LoadMore/>)
+    render(<LoadMore movies={movies}/>)
 
     expect(screen.getByRole('button')).toBeInTheDocument();
   });
