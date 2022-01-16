@@ -1,7 +1,7 @@
 # Проект Movies-explorer
 ## Всем привет, это дипломный проект курсов Яндекс.практикум по web-разработке.
 
-Ссылка на [сайт](movie.explorer.subb.front.nomoredomains.rocks). Публичный IP: 62.84.114.44. 
+Ссылка на [сайт](https://movie.explorer.subb.front.nomoredomains.rocks). Публичный IP: 62.84.114.44. 
 
 ### Запуск
 Для запуска проекта на своем устройстве вам нужно:
