@@ -27,6 +27,10 @@
   outline: none;
 }
 
+.search__input:focus {
+  box-shadow: 1px 1px 10px rgba(92, 92, 92, 0.25);
+}
+
 .search__submit {
   background-color: #2BE080;
   border-radius: 4px;
