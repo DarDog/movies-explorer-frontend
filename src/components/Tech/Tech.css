@@ -32,9 +32,9 @@
 
 .tech__list {
   width: 100%;
-  max-width: 690px;
-  justify-content: space-between;
-  align-items: center;
+  max-width: 700px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 85px);
   gap: 10px;
 }
 
@@ -90,9 +90,7 @@
   }
 
   .tech__list {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
     max-width: 200px;
+    gap: 10px;
   }
 }
