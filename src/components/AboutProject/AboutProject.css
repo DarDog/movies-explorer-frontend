@@ -1,0 +1,141 @@
+.about {
+  padding: 110px 70px;
+  background-color: #FFFFFF;
+}
+
+.about__list {
+  gap: 40px;
+}
+
+.about__item {
+  max-width: 550px;
+}
+
+.list__title {
+  margin: 0 0 26px;
+  padding: 0;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: -0.04em;
+  color: black;
+}
+
+.list__paragraph {
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: black;
+}
+
+.about__track {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  margin-top: 110px;
+}
+
+.track__element {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.track__element_type_back-end {
+  grid-column: 1;
+}
+
+.track__element_type_front-end {
+  grid-column: 2/6;
+}
+
+.track__bar {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0 14px;
+  padding: 0;
+  width: 100%;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  color: black;
+}
+
+.track__bar_type_back-end {
+  background-color: #2BE080;
+}
+
+.track__bar_type_front-end {
+  background-color: #F2F2F2;
+}
+
+.track__bar-name {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  color: #A0A0A0;
+  margin: 0;
+}
+
+@media screen and (max-width: 800px){
+  .about {
+    padding: 90px 50px;
+  }
+
+  .about__list {
+    gap: 30px;
+  }
+
+  .list__paragraph {
+    font-size: 12px;
+    line-height: 18px;
+  }
+}
+
+@media screen and (max-width: 550px){
+  .about {
+    padding: 70px 18px;
+  }
+
+  .list__title {
+    font-size: 18px;
+    line-height: 22px;
+    margin-bottom: 16px;
+  }
+
+  .list__paragraph {
+    font-size: 11px;
+    line-height: 16px;
+  }
+
+  .about__list {
+    flex-direction: column;
+    gap: 55px;
+  }
+
+  .about__track {
+    margin-top: 60px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .track__element_type_back-end {
+    grid-column: 1;
+  }
+
+  .track__element_type_front-end {
+    grid-column: 2/4;
+  }
+
+  .track__bar {
+    font-size: 13px;
+    line-height: 13px;
+    margin-bottom: 10px;
+  }
+}

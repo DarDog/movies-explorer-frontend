@@ -1,0 +1,186 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Компонент Register Соответствует своему snapshot 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <form
+        class="register"
+        name="register"
+        novalidate=""
+      >
+        <div
+          class="register__inputs"
+        >
+          <label
+            class="register__label"
+          >
+            Имя
+          </label>
+          <input
+            class="register__input register__input_status_error"
+            maxlength="30"
+            minlength="2"
+            required=""
+            type="text"
+            value=""
+          />
+          <span
+            class="register__error"
+          />
+          <label
+            class="register__label"
+          >
+            E-mail
+          </label>
+          <input
+            class="register__input register__input_status_error"
+            required=""
+            type="email"
+            value=""
+          />
+          <span
+            class="register__error"
+          />
+          <label
+            class="register__label"
+          >
+            Пароль
+          </label>
+          <input
+            class="register__input register__input_status_error"
+            maxlength="30"
+            minlength="8"
+            required=""
+            type="password"
+            value=""
+          />
+          <span
+            class="register__error"
+          />
+        </div>
+        <button
+          class="register__submit"
+        >
+          Зарегистрироваться
+        </button>
+      </form>
+    </div>
+  </body>,
+  "container": <div>
+    <form
+      class="register"
+      name="register"
+      novalidate=""
+    >
+      <div
+        class="register__inputs"
+      >
+        <label
+          class="register__label"
+        >
+          Имя
+        </label>
+        <input
+          class="register__input register__input_status_error"
+          maxlength="30"
+          minlength="2"
+          required=""
+          type="text"
+          value=""
+        />
+        <span
+          class="register__error"
+        />
+        <label
+          class="register__label"
+        >
+          E-mail
+        </label>
+        <input
+          class="register__input register__input_status_error"
+          required=""
+          type="email"
+          value=""
+        />
+        <span
+          class="register__error"
+        />
+        <label
+          class="register__label"
+        >
+          Пароль
+        </label>
+        <input
+          class="register__input register__input_status_error"
+          maxlength="30"
+          minlength="8"
+          required=""
+          type="password"
+          value=""
+        />
+        <span
+          class="register__error"
+        />
+      </div>
+      <button
+        class="register__submit"
+      >
+        Зарегистрироваться
+      </button>
+    </form>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
