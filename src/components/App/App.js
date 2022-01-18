@@ -1,23 +1,34 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import Movies from "../Movies/Movies";
 import SavedMovies from "../SavedMovies/SavedMovies";
 import Main from "../Main/Main";
 import Profile from "../Profile/Profile";
 import Auth from "../Auth/Auth";
 import { Route, Routes } from 'react-router-dom';
-import movies from "../../utils/preparedFilms";
 import './App.css';
 import Register from "../Register/Register";
 import Login from "../Login/Login";
 import NotFoundPage from "../NotFoundPage/NotFoundPage";
 import Popup from "../Popup/Popup";
+import { moviesApi } from "../../utils/MoviesApi";
 
 function App () {
   const [isOpen, setIsOpen] = useState(false);
+  const [movies, setMovies] = useState([]);
 
   const handlePopupOpen = () => {
     setIsOpen(!isOpen)
   }
+
+  useEffect(() => {
+    moviesApi.getMovies()
+      .then(movies => {
+        setMovies(movies)
+      })
+      .catch(err => {
+        console.error(err)
+      })
+  }, [])
 
   return (
     <div className="page">

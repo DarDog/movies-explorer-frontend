@@ -11,7 +11,7 @@ const MoviesCardList = ({ movies = [], ...props }) => {
           {
             movies.map(movie => {
               return (
-                <MoviesCard key={ movie._id } movie={ movie } isSaves={ props.isSaves }/>
+                <MoviesCard key={ movie.id } movie={ movie } isSaves={ props.isSaves }/>
               );
             })
           }
