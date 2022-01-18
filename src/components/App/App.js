@@ -11,6 +11,7 @@ import Login from "../Login/Login";
 import NotFoundPage from "../NotFoundPage/NotFoundPage";
 import Popup from "../Popup/Popup";
 import { moviesApi } from "../../utils/MoviesApi";
+import { mainApi } from "../../utils/MainApi";
 
 function App () {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,6 +20,16 @@ function App () {
   const handlePopupOpen = () => {
     setIsOpen(!isOpen)
   }
+
+  useEffect(() => {
+    mainApi.getCurrentUser()
+      .then(res => {
+        console.log(res)
+      })
+      .catch(err => {
+        console.error(err)
+      })
+  })
 
   useEffect(() => {
     moviesApi.getMovies()
