@@ -16,6 +16,7 @@ import { mainApi } from "../../utils/MainApi";
 function App () {
   const [isOpen, setIsOpen] = useState(false);
   const [movies, setMovies] = useState([]);
+  const [foundMovies, setFoundMovies] = useState([])
 
   const handlePopupOpen = () => {
     setIsOpen(!isOpen)
@@ -34,6 +35,7 @@ function App () {
   useEffect(() => {
     moviesApi.getMovies()
       .then(movies => {
+        console.log(movies)
         setMovies(movies)
       })
       .catch(err => {
@@ -45,6 +47,7 @@ function App () {
     <div className="page">
       <main className="main">
         <Routes>
+          <Route exact path='/' element={ <Main/> }/>
           <Route exact path='/signup' element={
             <Auth isRegister={ true }>
               <Register/>
@@ -56,10 +59,18 @@ function App () {
             </Auth>
           }/>
           <Route exact path='/profile' element={ <Profile handlePopupOpen={handlePopupOpen} /> }/>
-          <Route exact path='/movies' element={ <Movies handlePopupOpen={handlePopupOpen} movies={ movies }/> }/>
+          <Route
+            exact path='/movies'
+            element={
+              <Movies
+                handlePopupOpen={handlePopupOpen}
+                movies={foundMovies}
+                setFoundMovies={setFoundMovies}
+                moviesRegistry={movies}
+              />
+            }/>
           <Route exact path='/saved-movies'
-                 element={ <SavedMovies handlePopupOpen={handlePopupOpen} movies={ movies.filter(movie => movie.isLiked === true) }/> }/>
-          <Route exact path='/' element={ <Main/> }/>
+                 element={ <SavedMovies handlePopupOpen={handlePopupOpen} /> }/>
           <Route path='*' element={ <NotFoundPage/> }/>
         </Routes>
         <Popup onClose={handlePopupOpen} isOpen={isOpen}/>
