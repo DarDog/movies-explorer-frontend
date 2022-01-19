@@ -1,3 +1,5 @@
+import { MAIN_API_BASE_URL } from "./constants";
+
 class MainApi {
   constructor (baseUrl) {
     this._baseUrl = baseUrl;
@@ -120,4 +122,4 @@ class MainApi {
   }
 }
 
-export const mainApi = new MainApi('http://movie.explorer.subb.nomoredomains.rocks')
+export const mainApi = new MainApi(MAIN_API_BASE_URL);
