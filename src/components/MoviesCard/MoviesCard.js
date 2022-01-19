@@ -2,8 +2,6 @@ import React from 'react';
 import './MovieCard.css';
 
 const MoviesCard = ({ movie, ...props }) => {
-  console.log(movie)
-
   return (
     <li className='movies__item'>
       <div className="movies__info">

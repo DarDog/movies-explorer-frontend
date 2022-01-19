@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import Movies from "../Movies/Movies";
 import SavedMovies from "../SavedMovies/SavedMovies";
 import Main from "../Main/Main";
@@ -10,13 +10,11 @@ import Register from "../Register/Register";
 import Login from "../Login/Login";
 import NotFoundPage from "../NotFoundPage/NotFoundPage";
 import Popup from "../Popup/Popup";
-import { moviesApi } from "../../utils/MoviesApi";
 import { mainApi } from "../../utils/MainApi";
 
 function App () {
   const [isOpen, setIsOpen] = useState(false);
-  const [movies, setMovies] = useState([]);
-  const [foundMovies, setFoundMovies] = useState([])
+  const [isFound, setIsFound] = useState(false);
 
   const handlePopupOpen = () => {
     setIsOpen(!isOpen)
@@ -30,18 +28,7 @@ function App () {
       .catch(err => {
         console.error(err)
       })
-  })
-
-  useEffect(() => {
-    moviesApi.getMovies()
-      .then(movies => {
-        console.log(movies)
-        setMovies(movies)
-      })
-      .catch(err => {
-        console.error(err)
-      })
-  }, [])
+  }, []);
 
   return (
     <div className="page">
@@ -58,22 +45,26 @@ function App () {
               <Login/>
             </Auth>
           }/>
-          <Route exact path='/profile' element={ <Profile handlePopupOpen={handlePopupOpen} /> }/>
+          <Route exact path='/profile' element={ <Profile handlePopupOpen={ handlePopupOpen }/> }/>
           <Route
             exact path='/movies'
             element={
               <Movies
-                handlePopupOpen={handlePopupOpen}
-                movies={foundMovies}
-                setFoundMovies={setFoundMovies}
-                moviesRegistry={movies}
+                handlePopupOpen={ handlePopupOpen }
+                isFound={isFound}
+                setIsFound={setIsFound}
               />
             }/>
-          <Route exact path='/saved-movies'
-                 element={ <SavedMovies handlePopupOpen={handlePopupOpen} /> }/>
+          <Route
+            exact path='/saved-movies'
+            element={
+              <SavedMovies
+                handlePopupOpen={ handlePopupOpen }
+              />
+            }/>
           <Route path='*' element={ <NotFoundPage/> }/>
         </Routes>
-        <Popup onClose={handlePopupOpen} isOpen={isOpen}/>
+        <Popup onClose={ handlePopupOpen } isOpen={ isOpen }/>
       </main>
     </div>
   );

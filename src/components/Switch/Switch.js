@@ -1,10 +1,7 @@
 import React, { useState } from 'react';
 import './Switch.css';
 
-const Switch = () => {
-  const [isShorts, setIsShorts] = useState(false);
-  //ToDo Перенести стэйт короткометражек в вышестоящий компонент когда буду писать скрипты
-
+const Switch = ({isShorts, setIsShorts}) => {
   const handleSwitchChange = (evt) => {
     setIsShorts(evt.target.checked)
   }
