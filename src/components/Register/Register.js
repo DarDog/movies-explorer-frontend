@@ -63,7 +63,7 @@ const Register = (props) => {
   const handleSubmit = (evt) => {
     evt.preventDefault();
     mainApi.signUp({email, name, password})
-      .then(user => {
+      .then(() => {
         mainApi.signIn({email, password})
           .then(() => {
             props.setIsLoggedIn(true)
