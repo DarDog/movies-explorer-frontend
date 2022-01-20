@@ -1,7 +1,9 @@
 import React, {useState} from 'react';
+import {Navigate} from "react-router-dom";
 import './Register.css'
+import { mainApi } from "../../utils/MainApi";
 
-const Register = () => {
+const Register = (props) => {
   const [email, setEmail] = useState('');
   const [isEmailValid, setIsEmailValid] = useState(false);
   const [emailErrorMassage, setIsEmailErrorMassage] = useState('');
@@ -60,6 +62,16 @@ const Register = () => {
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
+    mainApi.signUp({email, name, password})
+      .then(user => {
+        mainApi.signIn({email, password})
+          .then(() => {
+            props.setIsLoggedIn(true)
+            return <Navigate to='/saved-movies'/>
+          })
+          .catch(err => console.error(err))
+      })
+      .catch(err => console.error(err))
   }
 
   return (

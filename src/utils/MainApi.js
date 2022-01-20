@@ -11,11 +11,11 @@ class MainApi {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: {
+      body: JSON.stringify({
         email,
-        name,
-        password
-      }
+        password,
+        name
+      })
     })
       .then(res => {
         return this._getResponseData(res)
@@ -28,14 +28,11 @@ class MainApi {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: {
+      body: JSON.stringify({
         email,
-        password
-      }
-    })
-      .then(res => {
-        return this._getResponseData(res)
+        password,
       })
+    })
   }
 
   getCurrentUser () {
@@ -55,10 +52,10 @@ class MainApi {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: {
+      body: JSON.stringify({
         email,
         name
-      }
+      })
     })
       .then(res => {
         return this._getResponseData(res)
@@ -82,7 +79,7 @@ class MainApi {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: movie
+      body: JSON.stringify({movie})
     })
       .then(res => {
         return this._getResponseData(res)

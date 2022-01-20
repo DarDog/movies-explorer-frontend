@@ -41,7 +41,9 @@ function App () {
 
           <Route path='/signup' element={
             <Auth isRegister={ true }>
-              <Register/>
+              <Register
+                setIsLoggedIn={setIsLoggedIn}
+              />
             </Auth>
           }/>
 
