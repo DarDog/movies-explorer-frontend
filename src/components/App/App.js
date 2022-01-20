@@ -11,10 +11,12 @@ import Login from "../Login/Login";
 import NotFoundPage from "../NotFoundPage/NotFoundPage";
 import Popup from "../Popup/Popup";
 import { mainApi } from "../../utils/MainApi";
+import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 
 function App () {
   const [isOpen, setIsOpen] = useState(false);
   const [isFound, setIsFound] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const handlePopupOpen = () => {
     setIsOpen(!isOpen)
@@ -34,34 +36,62 @@ function App () {
     <div className="page">
       <main className="main">
         <Routes>
-          <Route exact path='/' element={ <Main/> }/>
-          <Route exact path='/signup' element={
+
+          <Route path='/' element={ <Main/> }/>
+
+          <Route path='/signup' element={
             <Auth isRegister={ true }>
               <Register/>
             </Auth>
           }/>
-          <Route exact path='/signin' element={
+
+          <Route path='/signin' element={
             <Auth isRegister={ false }>
               <Login/>
             </Auth>
           }/>
-          <Route exact path='/profile' element={ <Profile handlePopupOpen={ handlePopupOpen }/> }/>
+
+          <Route
+            path='/profile'
+            element={
+              <ProtectedRoute>
+                <Profile
+                  exact path='/profile'
+                  isLoggedIn={ isLoggedIn }
+                  handlePopupOpen={ handlePopupOpen }
+                />
+              </ProtectedRoute>
+            }
+          />
+
           <Route
             exact path='/movies'
             element={
-              <Movies
-                handlePopupOpen={ handlePopupOpen }
-                isFound={isFound}
-                setIsFound={setIsFound}
-              />
-            }/>
+              <ProtectedRoute>
+                <Movies
+                  path='/movies'
+                  isLoggedIn={ isLoggedIn }
+                  handlePopupOpen={ handlePopupOpen }
+                  isFound={ isFound }
+                  setIsFound={ setIsFound }
+                />
+              </ProtectedRoute>
+            }
+          />
+
           <Route
-            exact path='/saved-movies'
+            path='/saved-movies'
             element={
-              <SavedMovies
-                handlePopupOpen={ handlePopupOpen }
-              />
-            }/>
+              <ProtectedRoute>
+                <SavedMovies
+                  exact path='/saved-movies'
+                  isLoggedIn={ isLoggedIn }
+                  handlePopupOpen={ handlePopupOpen }
+                />
+              </ProtectedRoute>
+            }
+          />
+
           <Route path='*' element={ <NotFoundPage/> }/>
         </Routes>
         <Popup onClose={ handlePopupOpen } isOpen={ isOpen }/>
