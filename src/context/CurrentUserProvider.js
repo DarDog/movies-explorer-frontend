@@ -17,14 +17,8 @@ export const CurrentUserProvider = ({ children }) => {
   const signIn = (userData, callBack) => {
     mainApi.signIn(userData)
       .then(() => {
-        localStorage.setItem('isAuth', 'true')
-        mainApi.getCurrentUser()
-          .then(user => {
-            console.log(user)
-            setUser(user)
-            callBack();
-          })
-          .catch(err => console.error(err))
+        localStorage.setItem('isAuth', 'true');
+        getCurrentUserInfo(callBack);
       })
       .catch(err => console.error(err))
   }
@@ -34,15 +28,24 @@ export const CurrentUserProvider = ({ children }) => {
     mainApi.signOut()
       .then(() => {
         localStorage.removeItem('isAuth')
+        callBack();
       })
       .catch(err => console.error(err))
-
-    callBack();
   }
 
-  const value = { user, signIn, signUp, signOut };
+  const getCurrentUserInfo = (callBack) => {
+    mainApi.getCurrentUser()
+      .then(user => {
+        setUser(user);
+        callBack();
+      })
+      .catch(err => console.error(err))
+  }
 
-  return <CurrentUserContext.Provider value={ value }>
-    { children }
-  </CurrentUserContext.Provider>
+  const value = { user, signIn, signUp, signOut, getCurrentUserInfo };
+
+  return (
+    <CurrentUserContext.Provider value={ value }>
+      { children }
+    </CurrentUserContext.Provider> )
 }
