@@ -34,10 +34,15 @@ const MoviesCard = ({ movie, ...props }) => {
   }
 
   const handleRemove = () => {
-    mainApi.removeSavedMovie(movie.id)
+    mainApi.removeSavedMovie(movie.id || movie.movieId)
       .then(() => {
         setIsSaved(false);
         getSavedMovies();
+
+        //Только для роута '../saved-movies'
+        if (props.isSaves) {
+          props.setSavedMovies((state) => state.filter((m) => m._id === movie._id ? m.remove : m))
+        }
       })
       .catch(err => console.error(err))
   }
@@ -60,7 +65,7 @@ const MoviesCard = ({ movie, ...props }) => {
           : <button type='button' className={ `movies__like ${ isSaved && 'movies__like_active' }` } onClick={handleLike}/>
         }
       </div>
-      <img src={ `https://api.nomoreparties.co/${ movie.image.url }` } alt={ movie.title } className="movies__poster"/>
+      <img src={ movie.image.url ? `https://api.nomoreparties.co/${ movie.image.url }`: movie.image  } alt={ movie.title } className="movies__poster"/>
     </li>
   );
 }

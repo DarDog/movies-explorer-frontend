@@ -59,7 +59,7 @@ const MoviesCardList = ({ movies, ...props }) => {
               ? !props.moviesNotFound ? <Preloader/> :
               <li className='movies__not-found'>{ props.errorMassage || 'Не чего не найдено' }</li>
               : currentMovies.map(movie => (
-                <MoviesCard key={ movie.id } movie={ movie } isSaves={ props.isSaves }/>
+                <MoviesCard key={ movie.id || movie._id } movie={ movie } isSaves={ props.isSaves } setSavedMovies={props.setSavedMovies}/>
               ))
           }
         </ul>
