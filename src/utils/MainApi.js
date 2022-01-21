@@ -84,7 +84,7 @@ class MainApi {
         'Content-Type': 'application/json'
       },
       credentials: 'include',
-      body: JSON.stringify({movie})
+      body: JSON.stringify(movie)
     })
       .then(res => {
         return this._getResponseData(res)

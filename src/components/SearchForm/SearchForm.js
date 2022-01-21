@@ -17,7 +17,7 @@ const SearchForm = (props) => {
         if (foundMovies.length < 1) {
           props.setMoviesNotFound(true);
         }
-        localStorage.setItem('savedMovies', JSON.stringify(foundMovies));
+        localStorage.setItem('found-movies', JSON.stringify(foundMovies));
         props.setMovies(foundMovies);
       })
       .catch(() => {

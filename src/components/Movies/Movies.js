@@ -3,17 +3,22 @@ import SearchForm from "../SearchForm/SearchForm";
 import MoviesCardList from "../MoviesCardList/MoviesCardList";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
+import { useAuth } from "../../hook/useAuth";
 
 const Movies = (props) => {
   const [movies, setMovies] = useState([]);
   const [moviesNotFound, setMoviesNotFound] = useState(false);
   const [errorMassage, setErrorMassage] = useState('');
-  const [isBeFoundMovies, setIsBeFoundMovies] = useState(false)
+  const [isBeFoundMovies, setIsBeFoundMovies] = useState(false);
+  const { getSavedMovies } = useAuth();
 
   // Возвращает ранее найденные фильмы при ререндере
   useEffect(() => {
-    setMovies(JSON.parse(localStorage.getItem('savedMovies')));
-    setIsBeFoundMovies(true)
+    getSavedMovies();
+    if (localStorage.getItem('found-movies')) {
+      setMovies(JSON.parse(localStorage.getItem('found-movies')));
+      setIsBeFoundMovies(true)
+    }
   }, []);
 
 
@@ -26,7 +31,7 @@ const Movies = (props) => {
         setErrorMassage={ setErrorMassage }
       />
       {
-        (movies.length > 0 || isBeFoundMovies) &&
+        ( movies.length > 0 || isBeFoundMovies ) &&
         <MoviesCardList
           movies={ movies }
           moviesNotFound={ moviesNotFound }

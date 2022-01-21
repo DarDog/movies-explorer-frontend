@@ -15,7 +15,7 @@ import { useAuth } from "../../hook/useAuth";
 
 function App () {
   const [isOpen, setIsOpen] = useState(false);
-  const {getCurrentUserInfo} = useAuth();
+  const { getUserInfo } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -28,67 +28,67 @@ function App () {
 
     if (isAuth) {
       const fromPage = location.state?.from?.pathname || '/movies';
-      getCurrentUserInfo(() => navigate(fromPage));
+      getUserInfo(() => navigate(fromPage));
     }
-  },[])
+  }, [])
 
   return (
     <div className="page">
       <main className="main">
-          <Routes>
+        <Routes>
 
-            <Route path='/' element={ <Main/> }/>
+          <Route path='/' element={ <Main/> }/>
 
-            <Route path='/signup' element={
-              <Auth isRegister={ true }>
-                <Register />
-              </Auth>
-            }/>
+          <Route path='/signup' element={
+            <Auth isRegister={ true }>
+              <Register/>
+            </Auth>
+          }/>
 
-            <Route path='/signin' element={
-              <Auth isRegister={ false }>
-                <Login />
-              </Auth>
-            }/>
+          <Route path='/signin' element={
+            <Auth isRegister={ false }>
+              <Login/>
+            </Auth>
+          }/>
 
-            <Route
-              path='/profile'
-              element={
-                <ProtectedRoute>
-                  <Profile
-                    exact path='/profile'
-                    handlePopupOpen={ handlePopupOpen }
-                  />
-                </ProtectedRoute>
-              }
-            />
+          <Route
+            path='/profile'
+            element={
+              <ProtectedRoute>
+                <Profile
+                  exact path='/profile'
+                  handlePopupOpen={ handlePopupOpen }
+                />
+              </ProtectedRoute>
+            }
+          />
 
-            <Route
-              exact path='/movies'
-              element={
-                <ProtectedRoute>
-                  <Movies
-                    path='/movies'
-                    handlePopupOpen={ handlePopupOpen }
-                  />
-                </ProtectedRoute>
-              }
-            />
+          <Route
+            exact path='/movies'
+            element={
+              <ProtectedRoute>
+                <Movies
+                  path='/movies'
+                  handlePopupOpen={ handlePopupOpen }
+                />
+              </ProtectedRoute>
+            }
+          />
 
-            <Route
-              path='/saved-movies'
-              element={
-                <ProtectedRoute>
-                  <SavedMovies
-                    exact path='/saved-movies'
-                    handlePopupOpen={ handlePopupOpen }
-                  />
-                </ProtectedRoute>
-              }
-            />
+          <Route
+            path='/saved-movies'
+            element={
+              <ProtectedRoute>
+                <SavedMovies
+                  exact path='/saved-movies'
+                  handlePopupOpen={ handlePopupOpen }
+                />
+              </ProtectedRoute>
+            }
+          />
 
-            <Route path='*' element={ <NotFoundPage/> }/>
-          </Routes>
+          <Route path='*' element={ <NotFoundPage/> }/>
+        </Routes>
         <Popup onClose={ handlePopupOpen } isOpen={ isOpen }/>
       </main>
     </div>
