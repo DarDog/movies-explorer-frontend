@@ -74,6 +74,17 @@
   opacity: .8;
 }
 
+.form__button_disable {
+  cursor: auto;
+  color: #a0a0a0;
+  pointer-events: none;
+}
+
+.form__button_disable:hover {
+  transform: scale(1);
+  opacity: 1;
+}
+
 .profile__exit {
   border: none;
   outline: none;

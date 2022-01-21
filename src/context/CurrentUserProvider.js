@@ -52,7 +52,15 @@ export const CurrentUserProvider = ({ children }) => {
       })
   }
 
-  const value = { user, signIn, signUp, signOut, getUserInfo, getSavedMovies };
+  const setUserInfo = (userInfo) => {
+    mainApi.updateCurrentUser(userInfo)
+      .then(newUserInfo => {
+        setUser(newUserInfo);
+      })
+      .catch(err => console.error(err))
+  }
+
+  const value = { user, signIn, signUp, signOut, getUserInfo, getSavedMovies, setUserInfo };
 
   return (
     <CurrentUserContext.Provider value={ value }>
