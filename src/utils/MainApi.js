@@ -28,6 +28,7 @@ class MainApi {
       headers: {
         'Content-Type': 'application/json'
       },
+      credentials: 'include',
       body: JSON.stringify({
         email,
         password,
@@ -40,6 +41,7 @@ class MainApi {
       headers: {
         'Content-Type': 'application/json'
       },
+      credentials: 'include',
     })
       .then(res => {
         return this._getResponseData(res)
@@ -52,6 +54,7 @@ class MainApi {
       headers: {
         'Content-Type': 'application/json'
       },
+      credentials: 'include',
       body: JSON.stringify({
         email,
         name
@@ -67,6 +70,7 @@ class MainApi {
       headers: {
         'Content-Type': 'application/json'
       },
+      credentials: 'include',
     })
       .then(res => {
         return this._getResponseData(res)
@@ -79,6 +83,7 @@ class MainApi {
       headers: {
         'Content-Type': 'application/json'
       },
+      credentials: 'include',
       body: JSON.stringify({movie})
     })
       .then(res => {
@@ -92,6 +97,7 @@ class MainApi {
       headers: {
         'Content-Type': 'application/json'
       },
+      credentials: 'include',
     })
       .then(res => {
         return this._getResponseData(res)
@@ -103,6 +109,7 @@ class MainApi {
       headers: {
         'Content-Type': 'application/json'
       },
+      credentials: 'include',
     })
       .then(res => {
         return this._getResponseData(res)

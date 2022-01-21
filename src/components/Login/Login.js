@@ -1,15 +1,17 @@
 import React, {useState} from 'react';
 import './Login.css'
-import { mainApi } from "../../utils/MainApi";
-import { Navigate } from "react-router-dom";
+import {useNavigate} from "react-router";
+import {useAuth} from "../../hook/useAuth";
 
-const Login = (props) => {
+const Login = () => {
   const [email, setEmail] = useState('');
   const [isEmailValid, setIsEmailValid] = useState(false);
   const [emailErrorMassage, setIsEmailErrorMassage] = useState('');
   const [isPasswordValid, setIsPasswordValid] = useState(false);
   const [passwordErrorMassage, setIsPasswordErrorMassage] = useState('');
   const [password, setPassword] = useState('');
+  const {signIn} = useAuth();
+  const navigate = useNavigate()
 
   const handleEmailChange = (evt) => {
     setEmail(evt.target.value)
@@ -43,12 +45,7 @@ const Login = (props) => {
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    mainApi.signIn({email, password})
-      .then(() => {
-        props.setIsLoggedIn(true)
-        return <Navigate to='/saved-movies'/>
-      })
-      .catch(err => console.error(err))
+    signIn({email, password}, () => navigate('/movies', {replace: true}))
   }
 
   return(

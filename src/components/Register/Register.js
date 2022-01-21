@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
-import {Navigate} from "react-router-dom";
+import { useAuth } from "../../hook/useAuth";
+import { useNavigate } from "react-router";
 import './Register.css'
-import { mainApi } from "../../utils/MainApi";
 
-const Register = (props) => {
+const Register = () => {
   const [email, setEmail] = useState('');
   const [isEmailValid, setIsEmailValid] = useState(false);
   const [emailErrorMassage, setIsEmailErrorMassage] = useState('');
@@ -13,6 +13,8 @@ const Register = (props) => {
   const [isPasswordValid, setIsPasswordValid] = useState(false);
   const [passwordErrorMassage, setIsPasswordErrorMassage] = useState('');
   const [password, setPassword] = useState('');
+  const {signUp} = useAuth();
+  const navigate = useNavigate();
 
   const handleEmailChange = (evt) => {
     setEmail(evt.target.value)
@@ -62,16 +64,7 @@ const Register = (props) => {
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    mainApi.signUp({email, name, password})
-      .then(() => {
-        mainApi.signIn({email, password})
-          .then(() => {
-            props.setIsLoggedIn(true)
-            return <Navigate to='/saved-movies'/>
-          })
-          .catch(err => console.error(err))
-      })
-      .catch(err => console.error(err))
+    signUp({email, name, password}, () => navigate('/movies', {replace: true}))
   }
 
   return (

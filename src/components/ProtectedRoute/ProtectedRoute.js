@@ -1,10 +1,12 @@
 import React from 'react';
 import { Navigate, useLocation } from "react-router";
+import {useAuth} from "../../hook/useAuth";
 
-const ProtectedRoute = ({ children, isLoggedIn }) => {
+const ProtectedRoute = ({ children }) => {
   const location = useLocation();
+  const {user} = useAuth();
 
-  if (!isLoggedIn) {
+  if (!user) {
     return <Navigate to='/signin' state={{ from: location }}/>
   }
 
