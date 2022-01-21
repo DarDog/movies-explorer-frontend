@@ -27,7 +27,7 @@ function App () {
     const isAuth = localStorage.getItem('isAuth') === 'true';
 
     if (isAuth) {
-      const fromPage = location.state?.from?.pathname || '/movies';
+      const fromPage = location.pathname || '/movies';
       getUserInfo(() => navigate(fromPage));
     }
   }, [])
