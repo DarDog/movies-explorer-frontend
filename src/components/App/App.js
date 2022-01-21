@@ -15,8 +15,7 @@ import { useAuth } from "../../hook/useAuth";
 
 function App () {
   const [isOpen, setIsOpen] = useState(false);
-  const [isFound, setIsFound] = useState(false);
-  const {getCurrentUserInfo} = useAuth()
+  const {getCurrentUserInfo} = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -29,7 +28,7 @@ function App () {
 
     if (isAuth) {
       const fromPage = location.state?.from?.pathname || '/movies';
-      getCurrentUserInfo(() => navigate(fromPage, {replace: true}));
+      getCurrentUserInfo(() => navigate(fromPage));
     }
   },[])
 
@@ -71,8 +70,6 @@ function App () {
                   <Movies
                     path='/movies'
                     handlePopupOpen={ handlePopupOpen }
-                    isFound={ isFound }
-                    setIsFound={ setIsFound }
                   />
                 </ProtectedRoute>
               }

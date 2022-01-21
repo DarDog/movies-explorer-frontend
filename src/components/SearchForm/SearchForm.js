@@ -9,7 +9,6 @@ const SearchForm = (props) => {
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    props.setIsFound(true);
     props.setMovies([]);
     props.setMoviesNotFound(false);
     moviesApi.getMovies()

@@ -8,27 +8,29 @@ const Movies = (props) => {
   const [movies, setMovies] = useState([]);
   const [moviesNotFound, setMoviesNotFound] = useState(false);
   const [errorMassage, setErrorMassage] = useState('');
+  const [isBeFoundMovies, setIsBeFoundMovies] = useState(false)
 
   // Возвращает ранее найденные фильмы при ререндере
   useEffect(() => {
     setMovies(JSON.parse(localStorage.getItem('savedMovies')));
+    setIsBeFoundMovies(true)
   }, []);
+
 
   return (
     <>
-      <Header handleClick={props.handlePopupOpen} isLoggedIn={true}/>
+      <Header handleClick={ props.handlePopupOpen } isLoggedIn={ true }/>
       <SearchForm
-        setIsFound={props.setIsFound}
-        setMovies={setMovies}
-        setMoviesNotFound={setMoviesNotFound}
-        setErrorMassage={setErrorMassage}
+        setMovies={ setMovies }
+        setMoviesNotFound={ setMoviesNotFound }
+        setErrorMassage={ setErrorMassage }
       />
       {
-        props.isFound &&
+        (movies.length > 0 || isBeFoundMovies) &&
         <MoviesCardList
           movies={ movies }
-          moviesNotFound={moviesNotFound}
-          errorMassage={errorMassage}
+          moviesNotFound={ moviesNotFound }
+          errorMassage={ errorMassage }
         />
       }
       <Footer/>
