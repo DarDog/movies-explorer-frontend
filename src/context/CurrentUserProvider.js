@@ -22,11 +22,11 @@ export const CurrentUserProvider = ({ children }) => {
           .then(user => {
             console.log(user)
             setUser(user)
+            callBack();
           })
           .catch(err => console.error(err))
       })
       .catch(err => console.error(err))
-    callBack();
   }
 
   const signOut = (callBack) => {

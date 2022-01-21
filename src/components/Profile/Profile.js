@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import Header from "../Header/Header";
 import './Profile.css'
+import { useAuth } from "../../hook/useAuth";
+import { useNavigate } from "react-router-dom";
 
 const Profile = (props) => {
   const [email, setEmail] = useState('example@example.com');
@@ -9,6 +11,8 @@ const Profile = (props) => {
   const [isNameValid, setIsNameValid] = useState(false);
   const [nameErrorMassage, setIsNameErrorMassage] = useState('');
   const [name, setName] = useState('Владислав');
+  const {signOut} = useAuth();
+  const navigate = useNavigate();
 
   const handleEmailChange = (evt) => {
     setEmail(evt.target.value)
@@ -44,6 +48,10 @@ const Profile = (props) => {
     evt.preventDefault();
   }
 
+  const handleSignOut = () => {
+    signOut(() => navigate('/', {replace: true}))
+  }
+
   return (
     <>
       <Header isLoggedIn={true}  handleClick={ props.handlePopupOpen }/>
@@ -62,7 +70,7 @@ const Profile = (props) => {
           <span className='form__error'>{emailErrorMassage}</span>
           <button type='submit' className='form__button'>Редактировать</button>
         </form>
-        <button type='button' className='profile__exit'>Выйти из аккаунта</button>
+        <button type='button' className='profile__exit' onClick={handleSignOut}>Выйти из аккаунта</button>
       </section>
     </>
   );

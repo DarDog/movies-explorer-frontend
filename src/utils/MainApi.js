@@ -111,9 +111,6 @@ class MainApi {
       },
       credentials: 'include',
     })
-      .then(res => {
-        return this._getResponseData(res)
-      })
   }
 
 
