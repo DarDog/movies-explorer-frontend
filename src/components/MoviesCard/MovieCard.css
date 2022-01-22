@@ -1,9 +1,13 @@
 .movies__item {
-  display: flex;
-  justify-content: space-between;
   background-color: #F9F9F9;
   padding: 6px;
   height: 100%;
+}
+
+.movies__link {
+  display: flex;
+  text-decoration: none;
+  justify-content: space-between;
 }
 
 .movies__item:last-of-type {
@@ -76,8 +80,11 @@
 
 @media screen and (max-width: 500px){
   .movies__item {
-    flex-direction: column-reverse;
     padding: 0;
+  }
+
+  .movies__link {
+    flex-direction: column-reverse;
   }
 
   .movies__poster {

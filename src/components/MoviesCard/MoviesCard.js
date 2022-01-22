@@ -57,15 +57,19 @@ const MoviesCard = ({ movie, ...props }) => {
 
   return (
     <li className='movies__item'>
-      <div className="movies__info">
-        <h2 className="movies__title">{ movie.nameRU }</h2>
-        <p className="movies__duration">{ Math.floor(movie.duration / 60) }ч { movie.duration % 60 }м</p>
-        { props.isSaves
-          ? <button type='button' className={ `movies__delete` } onClick={handleRemove}/>
-          : <button type='button' className={ `movies__like ${ isSaved && 'movies__like_active' }` } onClick={handleLike}/>
-        }
-      </div>
-      <img src={ movie.image.url ? `https://api.nomoreparties.co/${ movie.image.url }`: movie.image  } alt={ movie.title } className="movies__poster"/>
+      <a className='movies__link' href={ movie.trailer || movie.trailerLink } target='_blank'>
+        <div className="movies__info">
+          <h2 className="movies__title">{ movie.nameRU }</h2>
+          <p className="movies__duration">{ Math.floor(movie.duration / 60) }ч { movie.duration % 60 }м</p>
+          { props.isSaves
+            ? <button type='button' className={ `movies__delete` } onClick={ handleRemove }/>
+            : <button type='button' className={ `movies__like ${ isSaved && 'movies__like_active' }` }
+                      onClick={ handleLike }/>
+          }
+        </div>
+        <img src={ movie.image.url ? `https://api.nomoreparties.co/${ movie.image.url }` : movie.image }
+             alt={ movie.title } className="movies__poster"/>
+      </a>
     </li>
   );
 }
