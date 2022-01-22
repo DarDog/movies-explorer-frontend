@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './SearchForm.css'
 import Switch from "../Switch/Switch";
 import { moviesApi } from "../../utils/MoviesApi";
+import { SHORT_MOVIE_DURATION } from "../../utils/constants";
 
 const SearchForm = (props) => {
   const [keyWord, setKeyWord] = useState('');
@@ -38,7 +39,7 @@ const SearchForm = (props) => {
   }
 
   const filterMovies = (movie) => {
-    return movie.nameRU.toLowerCase().includes(keyWord.toLowerCase())
+    return movie.nameRU.toLowerCase().includes(keyWord.toLowerCase()) && (!isShorts || movie.duration <= SHORT_MOVIE_DURATION)
   }
 
   return (
