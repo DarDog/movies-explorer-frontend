@@ -57,7 +57,6 @@ const MoviesCard = ({ movie, ...props }) => {
 
   return (
     <li className='movies__item'>
-      <a className='movies__link' href={ movie.trailer || movie.trailerLink } target='_blank'>
         <div className="movies__info">
           <h2 className="movies__title">{ movie.nameRU }</h2>
           <p className="movies__duration">{ Math.floor(movie.duration / 60) }ч { movie.duration % 60 }м</p>
@@ -67,6 +66,7 @@ const MoviesCard = ({ movie, ...props }) => {
                       onClick={ handleLike }/>
           }
         </div>
+      <a className='movies__link' href={ movie.trailer || movie.trailerLink } target='_blank'>
         <img src={ movie.image.url ? `https://api.nomoreparties.co/${ movie.image.url }` : movie.image }
              alt={ movie.title } className="movies__poster"/>
       </a>
