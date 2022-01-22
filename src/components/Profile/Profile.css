@@ -109,6 +109,15 @@
   margin-bottom: 15px;
 }
 
+.form__success {
+  font-size: 10px;
+  line-height: 12px;
+  color: #2be080;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+
 @media screen and (max-width: 500px){
   .profile {
     padding: 70px 30px 40px;

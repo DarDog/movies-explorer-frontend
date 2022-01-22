@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Header from "../Header/Header";
 import './Profile.css'
 import { useAuth } from "../../hooks/useAuth";
@@ -9,7 +9,7 @@ const Profile = (props) => {
   const { user, signOut, setUserInfo } = useAuth();
   const navigate = useNavigate();
   const { handleChange, values, errors, isValid, setValues, setIsValid } = useForm();
-  let errCode;
+  const [success, setSuccess] = useState(false);
 
   useEffect(() => {
     setValues({name: user.name, email: user.email})
@@ -25,8 +25,12 @@ const Profile = (props) => {
     evt.preventDefault();
     if (isValid) {
       setUserInfo({ email: values.email, name: values.name })
+      setSuccess(true);
+      setIsValid(false);
     }
   }
+
+  console.log(success)
 
   const handleSignOut = () => {
     signOut(() => navigate('/', { replace: true }))
@@ -55,6 +59,7 @@ const Profile = (props) => {
           <button type='submit'
                   className={ `form__button ${ isValid ? '' : 'form__button_disable' }` }>Редактировать
           </button>
+          <span className='form__success'>{success && 'Данные успешно изменены'}</span>
         </form>
         <button type='button' className='profile__exit' onClick={ handleSignOut }>Выйти из аккаунта</button>
       </section>
