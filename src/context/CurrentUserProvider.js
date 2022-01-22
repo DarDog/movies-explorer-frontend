@@ -57,6 +57,9 @@ export const CurrentUserProvider = ({ children }) => {
       .then(newUserInfo => {
         setUser(newUserInfo);
       })
+      .catch(err => {
+        console.error(err)
+      })
   }
 
   const value = { user, signIn, signUp, signOut, getUserInfo, getSavedMovies, setUserInfo };

@@ -64,9 +64,21 @@
   transition: .3s;
 }
 
+.login__submit_disable {
+  background-color: #a0a0a0;
+  color: black;
+  cursor: auto;
+  pointer-events: none;
+}
+
 .login__submit:hover {
   opacity: .8;
   transform: scale(1.1);
+}
+
+.login__submit_disable:hover {
+  transform: scale(1);
+  opacity: 1;
 }
 
 @media screen and (max-width: 500px){

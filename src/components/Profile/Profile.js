@@ -25,10 +25,6 @@ const Profile = (props) => {
     evt.preventDefault();
     if (isValid) {
       setUserInfo({ email: values.email, name: values.name })
-        .catch(err => {
-          setIsValid(false);
-          errCode = err.status;
-        })
     }
   }
 
@@ -59,10 +55,6 @@ const Profile = (props) => {
           <button type='submit'
                   className={ `form__button ${ isValid ? '' : 'form__button_disable' }` }>Редактировать
           </button>
-          <span className='form__error'>{
-            errCode === 500
-              ? 'К сожалению сервер в настоящие время недоступен, попробуйте позже.'
-              : ''  }</span>
         </form>
         <button type='button' className='profile__exit' onClick={ handleSignOut }>Выйти из аккаунта</button>
       </section>
