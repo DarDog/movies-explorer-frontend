@@ -9,6 +9,7 @@ const SearchForm = (props) => {
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
+    if (!props.isSaves) {
     props.setMovies([]);
     props.setMoviesNotFound(false);
     moviesApi.getMovies()
@@ -24,6 +25,16 @@ const SearchForm = (props) => {
         props.setMoviesNotFound(true);
         props.setErrorMassage('Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз')
       });
+    } else {
+      props.setSavedMovies([]);
+      props.setMoviesNotFound(false);
+      const movies = JSON.parse(localStorage.getItem('saved-movies'))
+      const foundMovies = movies.filter(filterMovies);
+      if (foundMovies.length < 1) {
+        props.setMoviesNotFound(true);
+      }
+      props.setSavedMovies(foundMovies);
+    }
   }
 
   const filterMovies = (movie) => {

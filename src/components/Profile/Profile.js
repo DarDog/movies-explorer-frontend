@@ -30,8 +30,6 @@ const Profile = (props) => {
     }
   }
 
-  console.log(success)
-
   const handleSignOut = () => {
     signOut(() => navigate('/', { replace: true }))
   }
