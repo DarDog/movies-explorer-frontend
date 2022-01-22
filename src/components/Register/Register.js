@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { useAuth } from "../../hook/useAuth";
+import { useAuth } from "../../hooks/useAuth";
 import { useNavigate } from "react-router";
 import './Register.css'
 

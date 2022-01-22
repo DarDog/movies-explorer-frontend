@@ -3,7 +3,7 @@ import Navigation from "../Navigation/Navigation";
 import './Header.css'
 import { Link } from "react-router-dom";
 import LoginMenu from "../LoginMenu/LoginMenu";
-import { useAuth } from "../../hook/useAuth";
+import { useAuth } from "../../hooks/useAuth";
 
 const Header = (props) => {
   const {user} = useAuth();

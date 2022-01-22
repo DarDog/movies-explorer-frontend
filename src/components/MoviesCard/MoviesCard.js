@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './MovieCard.css';
 import { mainApi } from "../../utils/MainApi";
-import { useAuth } from "../../hook/useAuth";
+import { useAuth } from "../../hooks/useAuth";
 
 const MoviesCard = ({ movie, ...props }) => {
   const [isSaved, setIsSaved] = useState(false);

@@ -53,11 +53,10 @@ export const CurrentUserProvider = ({ children }) => {
   }
 
   const setUserInfo = (userInfo) => {
-    mainApi.updateCurrentUser(userInfo)
+    return mainApi.updateCurrentUser(userInfo)
       .then(newUserInfo => {
         setUser(newUserInfo);
       })
-      .catch(err => console.error(err))
   }
 
   const value = { user, signIn, signUp, signOut, getUserInfo, getSavedMovies, setUserInfo };

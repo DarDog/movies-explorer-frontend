@@ -11,7 +11,7 @@ import Login from "../Login/Login";
 import NotFoundPage from "../NotFoundPage/NotFoundPage";
 import Popup from "../Popup/Popup";
 import ProtectedRoute from "../../Hoc/ProtectedRoute/ProtectedRoute";
-import { useAuth } from "../../hook/useAuth";
+import { useAuth } from "../../hooks/useAuth";
 
 function App () {
   const [isOpen, setIsOpen] = useState(false);
