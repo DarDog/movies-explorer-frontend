@@ -28,6 +28,8 @@ export const CurrentUserProvider = ({ children }) => {
     mainApi.signOut()
       .then(() => {
         localStorage.removeItem('isAuth')
+        localStorage.removeItem('saved-movies')
+        localStorage.removeItem('found-movies')
         callBack();
       })
       .catch(err => console.error(err))
