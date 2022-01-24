@@ -4,6 +4,7 @@ import './Switch.css';
 const Switch = ({isShorts, setIsShorts}) => {
   const handleSwitchChange = (evt) => {
     setIsShorts(evt.target.checked)
+    localStorage.setItem('isShort', evt.target.checked)
   }
 
   return(

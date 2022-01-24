@@ -14,7 +14,8 @@ export const CurrentUserProvider = ({ children }) => {
     mainApi.getCurrentUser()
       .then(user => {
         updateUser(user);
-        localStorage.setItem('isAuth', 'true')
+        localStorage.setItem('isAuth', 'true');
+        localStorage.setItem('isShort', 'false');
         callBack();
       })
       .catch(err => {
@@ -26,9 +27,10 @@ export const CurrentUserProvider = ({ children }) => {
     setUser(null);
     mainApi.signOut()
       .then(() => {
-        localStorage.removeItem('isAuth')
-        localStorage.removeItem('saved-movies')
-        localStorage.removeItem('found-movies')
+        localStorage.removeItem('isAuth');
+        localStorage.removeItem('saved-movies');
+        localStorage.removeItem('found-movies');
+        localStorage.removeItem('isShort');
         callBack();
       })
       .catch(err => console.error(err))

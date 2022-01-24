@@ -6,7 +6,7 @@ import { SHORT_MOVIE_DURATION } from "../../utils/constants";
 
 const SearchForm = (props) => {
   const [keyWord, setKeyWord] = useState('');
-  const [isShorts, setIsShorts] = useState(false);
+  const [isShorts, setIsShorts] = useState(localStorage.getItem('isShort') === 'true');
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
