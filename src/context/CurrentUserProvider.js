@@ -10,18 +10,16 @@ export const CurrentUserProvider = ({ children }) => {
     setUser(userData);
   }
 
-  const signIn = (userData, callBack) => {
-    updateUser(userData);
-    callBack();
-
-
-
-    mainApi.signIn(userData)
-      .then(() => {
-        localStorage.setItem('isAuth', 'true');
-        getUserInfo(callBack);
+  const signIn = (callBack) => {
+    mainApi.getCurrentUser()
+      .then(user => {
+        updateUser(user);
+        localStorage.setItem('isAuth', 'true')
+        callBack();
       })
-      .catch(err => console.error(err))
+      .catch(err => {
+        console.error(err)
+      })
   }
 
   const signOut = (callBack) => {

@@ -34,6 +34,9 @@ class MainApi {
         password,
       })
     })
+      .then(res => {
+        return this._getResponseData(res)
+      })
   }
 
   getCurrentUser () {

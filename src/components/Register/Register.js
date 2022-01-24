@@ -22,13 +22,13 @@ const Register = () => {
       name: values.name,
       password: values.password
     })
-      .then(user => {
+      .then(() => {
         mainApi.signIn({
           email: values.email,
           password: values.password
         })
           .then(() => {
-            signIn(user, () => navigate('/movies', { replace: true }));
+            signIn(() => navigate('/movies', { replace: true }));
           })
           .catch(err => {
             setError(err)
