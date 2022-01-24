@@ -6,15 +6,16 @@ export const CurrentUserContext = createContext(null);
 export const CurrentUserProvider = ({ children }) => {
   const [user, setUser] = useState(null);
 
-  const signUp = (userData, callBack) => {
-    mainApi.signUp(userData)
-      .then(() => {
-        signIn(userData, callBack)
-      })
-      .catch(err => console.error(err))
+  const updateUser = (userData) => {
+    setUser(userData);
   }
 
   const signIn = (userData, callBack) => {
+    updateUser(userData);
+    callBack();
+
+
+
     mainApi.signIn(userData)
       .then(() => {
         localStorage.setItem('isAuth', 'true');
@@ -64,7 +65,7 @@ export const CurrentUserProvider = ({ children }) => {
       })
   }
 
-  const value = { user, signIn, signUp, signOut, getUserInfo, getSavedMovies, setUserInfo };
+  const value = { user, signIn, signOut, getUserInfo, getSavedMovies, setUserInfo };
 
   return (
     <CurrentUserContext.Provider value={ value }>

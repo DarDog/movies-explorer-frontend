@@ -3,21 +3,42 @@ import { useAuth } from "../../hooks/useAuth";
 import { useNavigate } from "react-router";
 import './Register.css'
 import { useForm } from "../../hooks/useForm";
+import { mainApi } from "../../utils/MainApi";
 
 const Register = () => {
-  const { signUp } = useAuth();
+  const { signIn } = useAuth();
   const navigate = useNavigate();
-  const { handleChange, values, errors, isValid } = useForm();
+  const { handleChange, values, errors, isValid, setIsValid } = useForm();
+  const [error, setError] = useState('');
+
+  const getErrorMassage = (err) => {
+    return err.json();
+  }
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    if (isValid) {
-      signUp({
-        email: values.email,
-        name: values.name,
-        password: values.password
-      }, () => navigate('/movies', { replace: true }))
-    }
+    mainApi.signUp({
+      email: values.email,
+      name: values.name,
+      password: values.password
+    })
+      .then(user => {
+        mainApi.signIn({
+          email: values.email,
+          password: values.password
+        })
+          .then(() => {
+            signIn(user, () => navigate('/movies', { replace: true }));
+          })
+          .catch(err => {
+            setError(err)
+          })
+      })
+      .catch((err) => {
+        setIsValid(false)
+        getErrorMassage(err)
+          .then(res => setError(res.validation ? res.validation.body.message : res.message))
+      })
   }
 
   return (
@@ -38,6 +59,7 @@ const Register = () => {
                maxLength={ 30 }/>
         <span className='register__error'>{ errors.password }</span>
       </div>
+      <span className='register__error'>{error}</span>
       <button className={ `register__submit ${ !isValid && 'register__submit_disable' }` }>Зарегистрироваться</button>
     </form>
   );
