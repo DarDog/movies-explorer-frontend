@@ -109,6 +109,11 @@
   margin-bottom: 15px;
 }
 
+.form__error_position_center {
+  align-self: center;
+  text-align: center;
+}
+
 .form__success {
   font-size: 10px;
   line-height: 12px;

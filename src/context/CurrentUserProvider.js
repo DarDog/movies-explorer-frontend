@@ -34,6 +34,8 @@ export const CurrentUserProvider = ({ children }) => {
       .catch(err => console.error(err))
   }
 
+
+
   const getUserInfo = (callBack) => {
     mainApi.getCurrentUser()
       .then(user => {
@@ -63,7 +65,7 @@ export const CurrentUserProvider = ({ children }) => {
       })
   }
 
-  const value = { user, signIn, signOut, getUserInfo, getSavedMovies, setUserInfo };
+  const value = { user, signIn, signOut, getUserInfo, getSavedMovies, setUserInfo, updateUser };
 
   return (
     <CurrentUserContext.Provider value={ value }>

@@ -4,30 +4,46 @@ import './Profile.css'
 import { useAuth } from "../../hooks/useAuth";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "../../hooks/useForm";
+import { mainApi } from "../../utils/MainApi";
 
 const Profile = (props) => {
-  const { user, signOut, setUserInfo } = useAuth();
+  const { user, signOut, updateUser } = useAuth();
   const navigate = useNavigate();
   const { handleChange, values, errors, isValid, setValues, setIsValid } = useForm();
   const [success, setSuccess] = useState(false);
+  const [error, setError] = useState('');
 
   useEffect(() => {
     setValues({name: user.name, email: user.email})
   }, []);
 
   useEffect(() => {
+    setSuccess(false)
     if (values.name === user.name && values.email === user.email) {
       setIsValid(false);
     }
-  }, [values])
+  }, [values]);
+
+  const getErrorMassage = (err) => {
+    return err.json();
+  }
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    if (isValid) {
-      setUserInfo({ email: values.email, name: values.name })
-      setSuccess(true);
-      setIsValid(false);
-    }
+    mainApi.updateCurrentUser({
+      email: values.email,
+      name: values.name
+    })
+      .then((user) => {
+        updateUser(user);
+        setIsValid(false);
+        setSuccess(true)
+      })
+      .catch(err => {
+        setIsValid(false)
+        getErrorMassage(err)
+          .then(res => setError(res.validation ? res.validation.body.message : res.message))
+      })
   }
 
   const handleSignOut = () => {
@@ -57,7 +73,8 @@ const Profile = (props) => {
           <button type='submit'
                   className={ `form__button ${ isValid ? '' : 'form__button_disable' }` }>Редактировать
           </button>
-          <span className='form__success'>{success && 'Данные успешно изменены'}</span>
+          <span className='form__success'>{success && 'Данные успешно изменены' }</span>
+          <span className='form__error form__error_position_center'>{ error }</span>
         </form>
         <button type='button' className='profile__exit' onClick={ handleSignOut }>Выйти из аккаунта</button>
       </section>
