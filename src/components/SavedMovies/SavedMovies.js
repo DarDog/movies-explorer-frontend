@@ -3,7 +3,6 @@ import SearchForm from "../SearchForm/SearchForm";
 import MoviesCardList from "../MoviesCardList/MoviesCardList";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
-import { useAuth } from "../../hooks/useAuth";
 
 const SavedMovies = (props) => {
   const [savedMovies, setSavedMovies] = useState([]);
@@ -11,9 +10,16 @@ const SavedMovies = (props) => {
   const [isBeFoundMovies, setIsBeFoundMovies] = useState(false);
 
   useEffect(() => {
-    setSavedMovies(JSON.parse(localStorage.getItem('saved-movies')));
-    setIsBeFoundMovies(true);
-  }, [])
+    const savedMovies = JSON.parse(localStorage.getItem('saved-movies'));
+
+    if (savedMovies.length < 1) {
+      setMoviesNotFound(true);
+    } else {
+      setMoviesNotFound(false);
+      setSavedMovies(savedMovies);
+      setIsBeFoundMovies(true);
+    }
+  }, []);
 
   return (
     <>

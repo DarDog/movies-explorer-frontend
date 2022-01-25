@@ -37,6 +37,15 @@ export const CurrentUserProvider = ({ children }) => {
     setUser(userData);
   }
 
+  const getUserInfo = (callBack) => {
+    mainApi.getCurrentUser()
+      .then(user => {
+        updateUser(user);
+        callBack();
+      })
+      .catch(err => console.error(err))
+  }
+
   const signIn = (callBack) => {
     mainApi.getCurrentUser()
       .then(user => {
@@ -65,36 +74,7 @@ export const CurrentUserProvider = ({ children }) => {
       .catch(err => console.error(err))
   }
 
-  const getUserInfo = (callBack) => {
-    mainApi.getCurrentUser()
-      .then(user => {
-        setUser(user);
-        callBack();
-      })
-      .catch(err => console.error(err))
-  }
-
-  const getSavedMovies = () => {
-    mainApi.getSavedMovies()
-      .then((movies) => {
-        localStorage.setItem('saved-movies', JSON.stringify(movies));
-      })
-      .catch(err => {
-        console.error(err);
-      })
-  }
-
-  const setUserInfo = (userInfo) => {
-    return mainApi.updateCurrentUser(userInfo)
-      .then(newUserInfo => {
-        setUser(newUserInfo);
-      })
-      .catch(err => {
-        console.error(err)
-      })
-  }
-
-  const value = { user, signIn, signOut, getUserInfo, getSavedMovies, setUserInfo, updateUser };
+  const value = { user, signIn, signOut, getUserInfo, updateUser };
 
   return (
     <CurrentUserContext.Provider value={ value }>
