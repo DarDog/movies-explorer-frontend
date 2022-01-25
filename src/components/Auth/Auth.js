@@ -1,8 +1,18 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import './Auth.css'
+import { useAuth } from "../../hooks/useAuth";
+import { Navigate, useLocation } from "react-router";
 
 const Auth = (props) => {
+  const { user } = useAuth();
+  const location = useLocation();
+
+
+  if (user) {
+    return <Navigate to='/movies' state={{ from: location }}/>
+  }
+
   return (
     <div className='auth'>
       <div className='auth__greetings'>
