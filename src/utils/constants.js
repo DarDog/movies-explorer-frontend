@@ -6,4 +6,4 @@ export const
   MOVIES_ON_DESKTOP = 7,
   MOVIES_ON_MOBILE = 5,
   SHORT_MOVIE_DURATION = 40,
-  GO_BACK = -2;
+  GO_BACK = -1;

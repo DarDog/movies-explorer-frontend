@@ -6,13 +6,12 @@ import { moviesApi } from "../utils/MoviesApi";
 export const CurrentUserContext = createContext(null);
 
 export const CurrentUserProvider = ({ children }) => {
-  const [user, setUser] = useState(null);
+  const isAuth = localStorage.getItem('isAuth') === 'true';
+  const [user, setUser] = useState(isAuth ? {} : null);
   const navigate = useNavigate();
   const location = useLocation();
 
   useEffect(() => {
-    const isAuth = localStorage.getItem('isAuth') === 'true';
-
     if (isAuth) {
       const fromPage = location.pathname || '/movies';
       getUserInfo(() => navigate(fromPage));
@@ -43,7 +42,9 @@ export const CurrentUserProvider = ({ children }) => {
         updateUser(user);
         callBack();
       })
-      .catch(err => console.error(err))
+      .catch(() => {
+        signOut();
+      })
   }
 
   const signIn = (callBack) => {

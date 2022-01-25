@@ -54,7 +54,7 @@ const MoviesCard = ({ movie, ...props }) => {
   }
 
   useEffect(() => {
-    const match = savedMovies.find(savedMovie => savedMovie.movieId === movie.id)
+    const match = savedMovies.find(savedMovie => (savedMovie.movieId || savedMovie.id) === (movie.id || movie.movieId))
 
     if (match) {
       setIsSaved(true);

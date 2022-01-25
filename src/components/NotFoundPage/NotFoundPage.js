@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link,  useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import './NotFoundPage.css'
 import { GO_BACK } from "../../utils/constants";
 import { useAuth } from "../../hooks/useAuth";
@@ -10,8 +10,7 @@ const NotFoundPage = () => {
 
   const handleClick = (evt) => {
     evt.preventDefault();
-
-    navigate(user ? GO_BACK : '/signup');
+    navigate( user ? -2 : GO_BACK);
   }
 
   return(
@@ -21,7 +20,7 @@ const NotFoundPage = () => {
         <h1 className='not-found__title'>404</h1>
         <p className='not-found__paragraph'>Страница не найдена</p>
       </div>
-      <Link to={'/'} onClick={handleClick} className='not-found__link'>Назад</Link>
+      <button type='button' onClick={handleClick} className='not-found__link'>Назад</button>
     </div>
   );
 }
