@@ -10,11 +10,9 @@ const Movies = (props) => {
   const [moviesNotFound, setMoviesNotFound] = useState(false);
   const [errorMassage, setErrorMassage] = useState('');
   const [isBeFoundMovies, setIsBeFoundMovies] = useState(false);
-  const { getSavedMovies } = useAuth();
 
   // Возвращает ранее найденные фильмы при ререндере
   useEffect(() => {
-    getSavedMovies();
     if (localStorage.getItem('found-movies')) {
       setMovies(JSON.parse(localStorage.getItem('found-movies')));
       setIsBeFoundMovies(true)

@@ -9,12 +9,10 @@ const SavedMovies = (props) => {
   const [savedMovies, setSavedMovies] = useState([]);
   const [moviesNotFound, setMoviesNotFound] = useState(false);
   const [isBeFoundMovies, setIsBeFoundMovies] = useState(false);
-  const { getSavedMovies } = useAuth();
 
   useEffect(() => {
-    getSavedMovies()
-    setSavedMovies(JSON.parse(localStorage.getItem('saved-movies')))
-    setIsBeFoundMovies(true)
+    setSavedMovies(JSON.parse(localStorage.getItem('saved-movies')));
+    setIsBeFoundMovies(true);
   }, [])
 
   return (

@@ -1,36 +1,23 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Movies from "../Movies/Movies";
 import SavedMovies from "../SavedMovies/SavedMovies";
 import Main from "../Main/Main";
 import Profile from "../Profile/Profile";
 import Auth from "../Auth/Auth";
-import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Register from "../Register/Register";
 import Login from "../Login/Login";
 import NotFoundPage from "../NotFoundPage/NotFoundPage";
 import Popup from "../Popup/Popup";
 import ProtectedRoute from "../../Hoc/ProtectedRoute/ProtectedRoute";
-import { useAuth } from "../../hooks/useAuth";
 
 function App () {
   const [isOpen, setIsOpen] = useState(false);
-  const { getUserInfo } = useAuth();
-  const navigate = useNavigate();
-  const location = useLocation();
 
   const handlePopupOpen = () => {
     setIsOpen(!isOpen)
   }
-
-  useEffect(() => {
-    const isAuth = localStorage.getItem('isAuth') === 'true';
-
-    if (isAuth) {
-      const fromPage = location.pathname || '/movies';
-      getUserInfo(() => navigate(fromPage));
-    }
-  }, [])
 
   return (
     <div className="page">

@@ -1,45 +1,57 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import './SearchForm.css'
 import Switch from "../Switch/Switch";
-import { moviesApi } from "../../utils/MoviesApi";
 import { SHORT_MOVIE_DURATION } from "../../utils/constants";
 
 const SearchForm = (props) => {
   const [keyWord, setKeyWord] = useState('');
-  const [isShorts, setIsShorts] = useState(localStorage.getItem('isShort') === 'true');
+  const [isShorts, setIsShorts] = useState(props.isSaves
+    ? localStorage.getItem('isShortInSaves') === 'true'
+    : localStorage.getItem('isShort') === 'true');
 
-  const handleSubmit = (evt) => {
-    evt.preventDefault();
-    if (!props.isSaves) {
-    props.setMovies([]);
-    props.setMoviesNotFound(false);
-    moviesApi.getMovies()
-      .then(movies => {
-        const foundMovies = movies.filter(filterMovies);
-        if (foundMovies.length < 1) {
-          props.setMoviesNotFound(true);
-        }
-        localStorage.setItem('found-movies', JSON.stringify(foundMovies));
-        props.setMovies(foundMovies);
-      })
-      .catch(() => {
-        props.setMoviesNotFound(true);
-        props.setErrorMassage('Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз')
-      });
-    } else {
+  const getMovies = (isSaves, isShort) => {
+    const movies = JSON.parse(localStorage.getItem(isSaves ? 'saved-movies' : 'movies'))
+    return movies.filter( movie => filterMovies(movie, isShort));
+  }
+
+  const filterMovies = (movie, isShort) => {
+    return movie.nameRU.toLowerCase().includes(keyWord.toLowerCase()) && (!isShort || movie.duration <= SHORT_MOVIE_DURATION)
+  }
+
+  const setMovies = (isSaves, isShort) => {
+    if (isSaves) {
       props.setSavedMovies([]);
-      props.setMoviesNotFound(false);
-      const movies = JSON.parse(localStorage.getItem('saved-movies'))
-      const foundMovies = movies.filter(filterMovies);
+      const foundMovies = getMovies(props.isSaves, isShort);
       if (foundMovies.length < 1) {
         props.setMoviesNotFound(true);
       }
       props.setSavedMovies(foundMovies);
+    } else {
+      props.setMovies([]);
+      const foundMovies = getMovies(props.isSaves, isShort);
+      if (foundMovies.length < 1) {
+        props.setMoviesNotFound(true);
+      }
+      localStorage.setItem('found-movies', JSON.stringify(foundMovies));
+      props.setMovies(foundMovies);
     }
   }
 
-  const filterMovies = (movie) => {
-    return movie.nameRU.toLowerCase().includes(keyWord.toLowerCase()) && (!isShorts || movie.duration <= SHORT_MOVIE_DURATION)
+  const handleSubmit = (evt) => {
+    evt.preventDefault();
+    props.setMoviesNotFound(false);
+    setMovies(props.isSaves, isShorts);
+  }
+
+  const onSwitchChange = (value) => {
+    setIsShorts(value)
+    if (props.isSaves) {
+      localStorage.setItem('isShortInSaves', value);
+      setMovies(props.isSaves, !isShorts);
+    } else {
+      localStorage.setItem('isShort', value);
+      props.setMovies(JSON.parse(localStorage.getItem('found-movies')).filter(movie => filterMovies(movie, !isShorts)))
+    }
   }
 
   return (
@@ -49,7 +61,7 @@ const SearchForm = (props) => {
                onChange={ evt => setKeyWord(evt.target.value) }/>
         <button type="submit" className="search__submit">Найти</button>
       </form>
-      <Switch isShorts={isShorts} setIsShorts={setIsShorts} />
+      <Switch isShorts={isShorts} setIsShorts={onSwitchChange} />
       <div className='search__border'/>
     </section>
   );
