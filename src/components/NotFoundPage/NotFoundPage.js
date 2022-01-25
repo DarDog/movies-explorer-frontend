@@ -2,15 +2,16 @@ import React from 'react';
 import { Link,  useNavigate } from "react-router-dom";
 import './NotFoundPage.css'
 import { GO_BACK } from "../../utils/constants";
+import { useAuth } from "../../hooks/useAuth";
 
 const NotFoundPage = () => {
   const navigate = useNavigate();
-  console.log('here')
+  const { user } = useAuth();
 
   const handleClick = (evt) => {
     evt.preventDefault();
 
-    navigate(GO_BACK)
+    navigate(user ? GO_BACK : '/signup');
   }
 
   return(

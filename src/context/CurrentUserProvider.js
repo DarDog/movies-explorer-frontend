@@ -52,6 +52,21 @@ export const CurrentUserProvider = ({ children }) => {
         updateUser(user);
         localStorage.setItem('isAuth', 'true');
         localStorage.setItem('isShort', 'false');
+        localStorage.setItem('isShortInSaves', 'false');
+        mainApi.getSavedMovies()
+          .then(movies => {
+            localStorage.setItem('saved-movies', JSON.stringify(movies));
+          })
+          .catch(err => {
+            console.error(err);
+          })
+        mainApi.getSavedMovies()
+          .then(movies => {
+            localStorage.setItem('saved-movies', JSON.stringify(movies))
+          })
+          .catch(err => {
+            console.error(err);
+          })
         callBack();
       })
       .catch(err => {

@@ -7,7 +7,6 @@ import Footer from "../Footer/Footer";
 const SavedMovies = (props) => {
   const [savedMovies, setSavedMovies] = useState([]);
   const [moviesNotFound, setMoviesNotFound] = useState(false);
-  const [isBeFoundMovies, setIsBeFoundMovies] = useState(false);
 
   useEffect(() => {
     const savedMovies = JSON.parse(localStorage.getItem('saved-movies'));
@@ -17,7 +16,6 @@ const SavedMovies = (props) => {
     } else {
       setMoviesNotFound(false);
       setSavedMovies(savedMovies);
-      setIsBeFoundMovies(true);
     }
   }, []);
 
@@ -30,7 +28,7 @@ const SavedMovies = (props) => {
         isSaves={ true }
       />
       {
-        ( savedMovies.length > 0 || isBeFoundMovies )
+        ( savedMovies.length > 0 )
         && <MoviesCardList
           setSavedMovies={ setSavedMovies }
           isSaves={ true }

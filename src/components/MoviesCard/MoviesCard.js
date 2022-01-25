@@ -1,13 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import './MovieCard.css';
 import { mainApi } from "../../utils/MainApi";
-import { useMovies } from "../../hooks/useMovies";
-
 
 const MoviesCard = ({ movie, ...props }) => {
   const [isSaved, setIsSaved] = useState(false);
   const savedMovies = JSON.parse(localStorage.getItem('saved-movies'));
-  const { updateSavedMovies } = useMovies();
+
+  const addSavedMovie = (movie) => {
+    const savedMovies = JSON.parse(localStorage.getItem('saved-movies'));
+    savedMovies.push(movie);
+    localStorage.setItem('saved-movies', JSON.stringify(savedMovies));
+  }
+
+  const removeSavedMovie = (movie) => {
+    const savedMovies = JSON.parse(localStorage.getItem('saved-movies'));
+    const newSavedMovies = savedMovies.filter((m) => (m.id || m.movieId) === (movie.id || movie.movieId) ? m.remove : m)
+    localStorage.setItem('saved-movies', JSON.stringify(newSavedMovies));
+  }
 
   const handleLike = () => {
     if (!isSaved) {
@@ -26,10 +35,11 @@ const MoviesCard = ({ movie, ...props }) => {
       })
         .then(() => {
           setIsSaved(true);
-          updateSavedMovies();
+          addSavedMovie(movie);
         })
         .catch(err => console.error(err))
     } else {
+      setIsSaved(false);
       handleRemove();
     }
   }
@@ -37,13 +47,8 @@ const MoviesCard = ({ movie, ...props }) => {
   const handleRemove = () => {
     mainApi.removeSavedMovie(movie.id || movie.movieId)
       .then(() => {
-        setIsSaved(false);
-        updateSavedMovies();
-
-        //Только для роута '../saved-movies'
-        if (props.isSaves) {
-          props.setSavedMovies((state) => state.filter((m) => m._id === movie._id ? m.remove : m));
-        }
+        props.setSavedMovies((state) => state.filter((m) => (m.id || m.movieId) === (movie.id || movie.movieId) ? m.remove : m));
+        removeSavedMovie(movie)
       })
       .catch(err => console.error(err))
   }
