@@ -47,13 +47,20 @@ export const CurrentUserProvider = ({ children }) => {
       })
   }
 
+  const initStorage = () => {
+    localStorage.setItem('isAuth', 'true');
+    localStorage.setItem('isShort', 'false');
+    localStorage.setItem('isShortInSaves', 'false');
+    localStorage.setItem('movies', JSON.stringify([]));
+    localStorage.setItem('found-movies', JSON.stringify([]));
+    localStorage.setItem('saved-movies', JSON.stringify([]));
+  }
+
   const signIn = (callBack) => {
+    initStorage();
     mainApi.getCurrentUser()
       .then(user => {
         updateUser(user);
-        localStorage.setItem('isAuth', 'true');
-        localStorage.setItem('isShort', 'false');
-        localStorage.setItem('isShortInSaves', 'false');
         mainApi.getSavedMovies()
           .then(movies => {
             localStorage.setItem('saved-movies', JSON.stringify(movies));
@@ -61,12 +68,12 @@ export const CurrentUserProvider = ({ children }) => {
           .catch(err => {
             console.error(err);
           })
-        mainApi.getSavedMovies()
-          .then(movies => {
-            localStorage.setItem('saved-movies', JSON.stringify(movies))
-          })
+        moviesApi.getMovies()
+          .then((movies => {
+            localStorage.setItem('movies', JSON.stringify(movies));
+          }))
           .catch(err => {
-            console.error(err);
+            console.error(err)
           })
         callBack();
       })
