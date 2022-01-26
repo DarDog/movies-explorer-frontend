@@ -15,7 +15,7 @@ const Profile = (props) => {
 
   useEffect(() => {
     setValues({name: user.name, email: user.email})
-  }, []);
+  }, [user]);
 
   useEffect(() => {
     setSuccess(false)
@@ -30,14 +30,14 @@ const Profile = (props) => {
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
+    setIsValid(false);
     mainApi.updateCurrentUser({
       email: values.email,
       name: values.name
     })
       .then((user) => {
         updateUser(user);
-        setIsValid(false);
-        setSuccess(true)
+        setSuccess(true);
       })
       .catch(err => {
         setIsValid(false)

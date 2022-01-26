@@ -17,6 +17,7 @@ const Register = () => {
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
+    setIsValid(false);
     mainApi.signUp({
       email: values.email,
       name: values.name,

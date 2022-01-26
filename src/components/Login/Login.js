@@ -17,6 +17,7 @@ const Login = () => {
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
+    setIsValid(false);
     mainApi.signIn({
       email: values.email,
       password: values.password
