@@ -47,7 +47,9 @@ const MoviesCard = ({ movie, ...props }) => {
   const handleRemove = () => {
     mainApi.removeSavedMovie(movie.id || movie.movieId)
       .then(() => {
-        props.setSavedMovies((state) => state.filter((m) => (m.id || m.movieId) === (movie.id || movie.movieId) ? m.remove : m));
+        if (props.isSaves) {
+          props.setSavedMovies((state) => state.filter((m) => (m.id || m.movieId) === (movie.id || movie.movieId) ? m.remove : m));
+        }
         removeSavedMovie(movie)
       })
       .catch(err => console.error(err))
