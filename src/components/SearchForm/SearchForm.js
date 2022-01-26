@@ -11,6 +11,7 @@ const SearchForm = (props) => {
 
   const getMovies = (isSaves, isShort) => {
     const movies = JSON.parse(localStorage.getItem(isSaves ? 'saved-movies' : 'movies'))
+    localStorage.setItem('found-movies', JSON.stringify(movies));
     return movies.filter( movie => filterMovies(movie, isShort));
   }
 
@@ -37,7 +38,6 @@ const SearchForm = (props) => {
       if (foundMovies.length < 1) {
         props.setMoviesNotFound(true);
       }
-      localStorage.setItem('found-movies', JSON.stringify(foundMovies));
       props.setMovies(foundMovies);
     }
   }
