@@ -9,15 +9,6 @@ const Movies = (props) => {
   const [movies, setMovies] = useState([]);
   const [moviesNotFound, setMoviesNotFound] = useState(false);
   const [errorMassage, setErrorMassage] = useState('');
-  const [isBeFoundMovies, setIsBeFoundMovies] = useState(false);
-
-  // Возвращает ранее найденные фильмы при ререндере
-  useEffect(() => {
-    if (localStorage.getItem('found-movies')) {
-      setMovies(JSON.parse(localStorage.getItem('found-movies')));
-      setIsBeFoundMovies(true)
-    }
-  }, []);
 
 
   return (
@@ -29,7 +20,7 @@ const Movies = (props) => {
         setErrorMassage={ setErrorMassage }
       />
       {
-        ( movies.length > 0 || isBeFoundMovies ) &&
+        ( movies.length > 0 || moviesNotFound ) &&
         <MoviesCardList
           movies={ movies }
           moviesNotFound={ moviesNotFound }

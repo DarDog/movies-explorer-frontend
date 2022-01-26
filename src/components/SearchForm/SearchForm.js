@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './SearchForm.css'
 import Switch from "../Switch/Switch";
 import { SHORT_MOVIE_DURATION } from "../../utils/constants";
@@ -11,6 +11,11 @@ const SearchForm = (props) => {
 
   const getMovies = (isSaves, isShort) => {
     const movies = JSON.parse(localStorage.getItem(isSaves ? 'saved-movies' : 'movies'))
+    return movies.filter( movie => filterMovies(movie, isShort));
+  }
+
+  const getFoundMovies = (isShort) => {
+    const movies = JSON.parse(localStorage.getItem('found-movies'))
     return movies.filter( movie => filterMovies(movie, isShort));
   }
 
@@ -53,6 +58,14 @@ const SearchForm = (props) => {
       props.setMovies(JSON.parse(localStorage.getItem('found-movies')).filter(movie => filterMovies(movie, !isShorts)))
     }
   }
+
+  useEffect(() => {
+    if (props.isSaves) {
+      props.setSavedMovies(getMovies(props.isSaves, isShorts))
+    } else {
+      props.setMovies(getFoundMovies(isShorts))
+    }
+  }, [])
 
   return (
     <section className="search main__search">

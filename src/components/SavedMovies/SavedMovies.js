@@ -8,17 +8,6 @@ const SavedMovies = (props) => {
   const [savedMovies, setSavedMovies] = useState([]);
   const [moviesNotFound, setMoviesNotFound] = useState(false);
 
-  useEffect(() => {
-    const savedMovies = JSON.parse(localStorage.getItem('saved-movies'));
-
-    if (savedMovies.length < 1) {
-      setMoviesNotFound(true);
-    } else {
-      setMoviesNotFound(false);
-      setSavedMovies(savedMovies);
-    }
-  }, []);
-
   return (
     <>
       <Header handleClick={ props.handlePopupOpen } isLoggedIn={ true }/>
@@ -28,7 +17,7 @@ const SavedMovies = (props) => {
         isSaves={ true }
       />
       {
-        ( savedMovies.length > 0 )
+        ( savedMovies.length > 0 || moviesNotFound )
         && <MoviesCardList
           setSavedMovies={ setSavedMovies }
           isSaves={ true }
