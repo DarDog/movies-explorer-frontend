@@ -11,7 +11,8 @@ const SearchForm = (props) => {
 
   const getMovies = (isSaves, isShort) => {
     const movies = JSON.parse(localStorage.getItem(isSaves ? 'saved-movies' : 'movies'))
-    localStorage.setItem('found-movies', JSON.stringify(movies));
+    const foundMovies = movies.filter(movie => movie.nameRU.toLowerCase().includes(keyWord.toLowerCase()));
+    localStorage.setItem('found-movies', JSON.stringify(foundMovies));
     return movies.filter( movie => filterMovies(movie, isShort));
   }
 
