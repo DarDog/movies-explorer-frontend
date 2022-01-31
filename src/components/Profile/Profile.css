@@ -74,6 +74,17 @@
   opacity: .8;
 }
 
+.form__button_disable {
+  cursor: auto;
+  color: #a0a0a0;
+  pointer-events: none;
+}
+
+.form__button_disable:hover {
+  transform: scale(1);
+  opacity: 1;
+}
+
 .profile__exit {
   border: none;
   outline: none;
@@ -97,6 +108,20 @@
   color: #EE3465;
   margin-bottom: 15px;
 }
+
+.form__error_position_center {
+  align-self: center;
+  text-align: center;
+}
+
+.form__success {
+  font-size: 10px;
+  line-height: 12px;
+  color: #2be080;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
 
 @media screen and (max-width: 500px){
   .profile {

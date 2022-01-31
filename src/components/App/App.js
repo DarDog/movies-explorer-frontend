@@ -1,18 +1,19 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import Movies from "../Movies/Movies";
 import SavedMovies from "../SavedMovies/SavedMovies";
 import Main from "../Main/Main";
 import Profile from "../Profile/Profile";
 import Auth from "../Auth/Auth";
 import { Route, Routes } from 'react-router-dom';
-import movies from "../../utils/preparedFilms";
 import './App.css';
 import Register from "../Register/Register";
 import Login from "../Login/Login";
 import NotFoundPage from "../NotFoundPage/NotFoundPage";
 import Popup from "../Popup/Popup";
+import ProtectedRoute from "../../Hoc/ProtectedRoute";
+import { CurrentUserProvider } from "../../context/CurrentUserProvider";
 
-function App () {
+const App = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const handlePopupOpen = () => {
@@ -22,25 +23,50 @@ function App () {
   return (
     <div className="page">
       <main className="main">
-        <Routes>
-          <Route exact path='/signup' element={
-            <Auth isRegister={ true }>
-              <Register/>
-            </Auth>
-          }/>
-          <Route exact path='/signin' element={
-            <Auth isRegister={ false }>
-              <Login/>
-            </Auth>
-          }/>
-          <Route exact path='/profile' element={ <Profile handlePopupOpen={handlePopupOpen} /> }/>
-          <Route exact path='/movies' element={ <Movies handlePopupOpen={handlePopupOpen} movies={ movies }/> }/>
-          <Route exact path='/saved-movies'
-                 element={ <SavedMovies handlePopupOpen={handlePopupOpen} movies={ movies.filter(movie => movie.isLiked === true) }/> }/>
-          <Route exact path='/' element={ <Main/> }/>
-          <Route path='*' element={ <NotFoundPage/> }/>
-        </Routes>
-        <Popup onClose={handlePopupOpen} isOpen={isOpen}/>
+        <CurrentUserProvider>
+          <Routes>
+            <Route path='/' element={ <Main/> }/>
+            <Route path='/signup' element={
+              <Auth isRegister={ true }>
+                <Register/>
+              </Auth>
+            }/>
+            <Route path='/signin' element={
+              <Auth isRegister={ false }>
+                <Login/>
+              </Auth>
+            }/>
+            <Route path='/profile' element={
+                <ProtectedRoute>
+                  <Profile
+                    exact path='/profile'
+                    handlePopupOpen={ handlePopupOpen }
+                  />
+                </ProtectedRoute>
+              }
+            />
+            <Route path='/movies' element={
+                <ProtectedRoute>
+                  <Movies
+                    path='/movies'
+                    handlePopupOpen={ handlePopupOpen }
+                  />
+                </ProtectedRoute>
+              }
+            />
+            <Route path='/saved-movies' element={
+                <ProtectedRoute>
+                  <SavedMovies
+                    exact path='/saved-movies'
+                    handlePopupOpen={ handlePopupOpen }
+                  />
+                </ProtectedRoute>
+              }
+            />
+            <Route path='*' element={ <NotFoundPage/> }/>
+          </Routes>
+        </CurrentUserProvider>
+        <Popup onClose={ handlePopupOpen } isOpen={ isOpen }/>
       </main>
     </div>
   );

@@ -1,19 +1,29 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import SearchForm from "../SearchForm/SearchForm";
 import MoviesCardList from "../MoviesCardList/MoviesCardList";
-import Preloader from "../Preloader/Preloader";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 
-const SavedMovies = ({ movies = [], ...props }) => {
+const SavedMovies = (props) => {
+  const [savedMovies, setSavedMovies] = useState([]);
+  const [moviesNotFound, setMoviesNotFound] = useState(false);
+
   return (
     <>
-      <Header handleClick={props.handlePopupOpen} isLoggedIn={true}/>
-      <SearchForm/>
+      <Header handleClick={ props.handlePopupOpen } isLoggedIn={ true }/>
+      <SearchForm
+        setSavedMovies={ setSavedMovies }
+        setMoviesNotFound={ setMoviesNotFound }
+        isSaves={ true }
+      />
       {
-        movies.length > 0
-          ? <MoviesCardList movies={ movies } isSaves={ true }/>
-          : <Preloader/>
+        ( savedMovies.length > 0 || moviesNotFound )
+        && <MoviesCardList
+          setSavedMovies={ setSavedMovies }
+          isSaves={ true }
+          movies={ savedMovies }
+          moviesNotFound={ moviesNotFound }
+        />
       }
       <Footer/>
     </>

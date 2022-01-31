@@ -1,68 +1,82 @@
-import React, {useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import Header from "../Header/Header";
 import './Profile.css'
+import { useAuth } from "../../hooks/useAuth";
+import { useNavigate } from "react-router-dom";
+import { useForm } from "../../hooks/useForm";
+import { mainApi } from "../../utils/MainApi";
 
 const Profile = (props) => {
-  const [email, setEmail] = useState('example@example.com');
-  const [isEmailValid, setIsEmailValid] = useState(false);
-  const [emailErrorMassage, setIsEmailErrorMassage] = useState('');
-  const [isNameValid, setIsNameValid] = useState(false);
-  const [nameErrorMassage, setIsNameErrorMassage] = useState('');
-  const [name, setName] = useState('Владислав');
+  const { user, signOut, updateUser } = useAuth();
+  const navigate = useNavigate();
+  const { handleChange, values, errors, isValid, setValues, setIsValid } = useForm();
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState('');
 
-  const handleEmailChange = (evt) => {
-    setEmail(evt.target.value)
-    validateEmail(evt.target)
-  }
+  useEffect(() => {
+    setValues({name: user.name, email: user.email})
+  }, [user]);
 
-  const handleNameChange = (evt) => {
-    setName(evt.target.value)
-    validateName(evt.target)
-  }
-
-  const validateEmail = (input) => {
-    if (!input.validity.valid) {
-      setIsEmailValid(false);
-      setIsEmailErrorMassage(input.validationMessage);
-    } else {
-      setIsEmailValid(true);
-      setIsEmailErrorMassage(input.validationMessage);
+  useEffect(() => {
+    setSuccess(false)
+    if (values.name === user.name && values.email === user.email) {
+      setIsValid(false);
     }
-  }
+  }, [values]);
 
-  const validateName = (input) => {
-    if (!input.validity.valid) {
-      setIsNameValid(false);
-      setIsNameErrorMassage(input.validationMessage);
-    } else {
-      setIsNameValid(true);
-      setIsNameErrorMassage(input.validationMessage);
-    }
+  const getErrorMassage = (err) => {
+    return err.json();
   }
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
+    setIsValid(false);
+    mainApi.updateCurrentUser({
+      email: values.email,
+      name: values.name
+    })
+      .then((user) => {
+        updateUser(user);
+        setSuccess(true);
+      })
+      .catch(err => {
+        setIsValid(false)
+        getErrorMassage(err)
+          .then(res => setError(res.validation ? res.validation.body.message : res.message))
+      })
+  }
+
+  const handleSignOut = () => {
+    signOut(() => navigate('/', { replace: true }))
   }
 
   return (
     <>
-      <Header isLoggedIn={true}  handleClick={ props.handlePopupOpen }/>
+      <Header handleClick={ props.handlePopupOpen }/>
       <section className='profile'>
-        <h1 className='profile__title'>Привет, Владислав!</h1>
-        <form onSubmit={handleSubmit} name='edit-profile' className='profile__form' noValidate>
+        <h1 className='profile__title'>Привет, { user.name }!</h1>
+        <form onSubmit={ handleSubmit } name='edit-profile' className='profile__form' noValidate>
           <div className='form__element'>
-            <label className='form__label'>Имя</label>
-            <input className='form__input' type="text" value={name} onChange={handleNameChange} minLength='2' maxLength='30' required/>
+            <label className='form__label' htmlFor='name'>Имя</label>
+            <input className='form__input' name='name' type='text' placeholder={ user.name } value={ values.name || '' }
+                   onChange={ handleChange }
+                   minLength='2' maxLength='30' required/>
           </div>
-          <span className='form__error'>{nameErrorMassage}</span>
+          <span className='form__error'>{ errors.name }</span>
           <div className='form__element'>
-            <label className='form__label'>E-mail</label>
-            <input className='form__input' type='email' value={email} onChange={handleEmailChange} required/>
+            <label className='form__label' htmlFor='email'>E-mail</label>
+            <input className='form__input' name='email' type='email' placeholder={ user.email }
+                   value={ values.email || '' } onChange={ handleChange }
+                   required/>
           </div>
-          <span className='form__error'>{emailErrorMassage}</span>
-          <button type='submit' className='form__button'>Редактировать</button>
+          <span className='form__error'>{ errors.email }</span>
+          <button type='submit'
+                  className={ `form__button ${ isValid ? '' : 'form__button_disable' }` }>Редактировать
+          </button>
+          <span className='form__success'>{success && 'Данные успешно изменены' }</span>
+          <span className='form__error form__error_position_center'>{ error }</span>
         </form>
-        <button type='button' className='profile__exit'>Выйти из аккаунта</button>
+        <button type='button' className='profile__exit' onClick={ handleSignOut }>Выйти из аккаунта</button>
       </section>
     </>
   );

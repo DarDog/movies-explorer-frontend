@@ -64,10 +64,24 @@
   transition: .3s;
 }
 
+.register__submit_disable {
+  background-color: #a0a0a0;
+  color: black;
+  cursor: auto;
+  pointer-events: none;
+}
+
+
 .register__submit:hover {
   opacity: .8;
   transform: scale(1.1);
 }
+
+.register__submit_disable:hover {
+  transform: scale(1);
+  opacity: 1;
+}
+
 
 @media screen and (max-width: 500px){
   .register {
